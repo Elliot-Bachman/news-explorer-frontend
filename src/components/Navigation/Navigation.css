@@ -1,0 +1,53 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 104px;
+  height: 80px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navigation__logo {
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1b22;
+}
+
+.navigation__buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.navigation__button {
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navigation__button_type_login {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.navigation__button_type_register {
+  background-color: #2f71e5;
+  border: none;
+  color: #fff;
+}
+
+.navigation__button_type_logout {
+  background-color: transparent;
+  border: 1px solid #d1d2d6;
+  color: #1a1b22;
+}
+
+.navigation__button:hover {
+  opacity: 0.8;
+}
