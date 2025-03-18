@@ -2,7 +2,13 @@ import "./Header.css";
 import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
 
-function Header({ onLoginClick, onLogout, onRegisterClick, handleSearch }) {
+function Header({
+  onLoginClick,
+  onLogout,
+  onRegisterClick,
+  handleSearch,
+  currentPath,
+}) {
   return (
     <header className="header">
       <div className="header__nav-container">
@@ -10,6 +16,7 @@ function Header({ onLoginClick, onLogout, onRegisterClick, handleSearch }) {
           onLoginClick={onLoginClick}
           onLogout={onLogout}
           onRegisterClick={onRegisterClick}
+          currentPath={currentPath}
         />
       </div>
       <div className="header__text-container">

@@ -13,6 +13,31 @@
   font-size: 20px;
   font-weight: 700;
   color: #1a1b22;
+  text-decoration: none;
+}
+
+.navigation__links {
+  display: flex;
+  gap: 24px;
+}
+
+.navigation__link {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1b22;
+  text-decoration: none;
+  padding: 10px 8px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.navigation__link:hover {
+  border-bottom: 3px solid #2f71e5;
+}
+
+.navigation__link_active {
+  border-bottom: 3px solid #2f71e5;
 }
 
 .navigation__buttons {
@@ -50,4 +75,14 @@
 
 .navigation__button:hover {
   opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    padding: 0 20px;
+  }
+
+  .navigation__links {
+    gap: 16px;
+  }
 }
