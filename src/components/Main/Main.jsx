@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Main.css";
 import Preloader from "../Preloader/Preloader";
+import About from "../About/About";
 
 function Main() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +36,9 @@ function Main() {
             )}
           </div>
         </section>
+
+        {/* About section */}
+        <About />
       </div>
     </main>
   );
