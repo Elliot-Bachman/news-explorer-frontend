@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-  padding: 20px;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .App h1 {
