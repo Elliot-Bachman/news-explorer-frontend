@@ -1,9 +1,10 @@
 .header {
-  background-image: url("../../assets/header_image.png");
+  background-image: url("/assets/images/Header_Background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0;
+  min-height: 400px; /* Ensure minimum height for header */
 }
 .header__nav-container {
   padding-bottom: 15px;
@@ -23,8 +24,8 @@
 
 .header__title {
   font-size: 60px;
-  font-family: "Roboto-Slab-400", Arial, sans-serif;
-  font-weight: 400;
+  font-family: var(--font-family-headers);
+  font-weight: var(--font-weight-regular);
   line-height: 64px;
   color: #fff;
   margin: 0;
@@ -34,17 +35,17 @@
 .header__subtitle {
   margin: 0;
   color: #fff;
-  font-family: "Roboto", "Arial", sans-serif;
-  font-weight: 400;
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-regular);
   font-size: 18px;
   line-height: 24px;
   padding-top: 32px;
 }
 
 .header__logo {
-  font-family: "Roboto-Slab", "Arial", sans-serif;
+  font-family: var(--font-family-headers);
   font-size: 20px;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   margin: 0;
   color: #fff;
 }
