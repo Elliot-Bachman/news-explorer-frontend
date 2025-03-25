@@ -32,9 +32,9 @@
 
 .about__title {
   font-size: 40px;
-  margin: 0 0 24px;
-  font-weight: 400;
-  font-family: "Roboto-Slab-400", Arial, Helvetica, sans-serif;
+  margin: -120px 0 0;
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-headers);
 }
 
 .about__paragraph {
@@ -42,8 +42,8 @@
   line-height: 1.5;
   margin-bottom: 15px;
   color: #1a1b22;
-  font-weight: 400;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 @media screen and (max-width: 842px) {
@@ -81,11 +81,15 @@
     font-size: 30px; /* Scale down the title slightly for smaller screens */
     margin-bottom: 10px; /* Adjust margin for consistency */
     margin-top: 40px;
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-headers);
   }
 
   .about__paragraph {
     font-size: 18px; /* Adjust font size for readability */
     line-height: 1.5; /* Maintain a comfortable line height */
+    font-weight: var(--font-weight-regular);
+    font-family: "Roboto", Arial, sans-serif;
   }
 }
 
@@ -125,11 +129,15 @@
     font-size: 30px; /* Scale down the title slightly for smaller screens */
     margin-bottom: 10px; /* Adjust margin for consistency */
     margin-top: 40px;
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-headers);
   }
 
   .about__paragraph {
     font-size: 18px; /* Adjust font size for readability */
     line-height: 1.5; /* Maintain a comfortable line height */
+    font-weight: var(--font-weight-regular);
+    font-family: "Roboto", Arial, sans-serif;
   }
 }
 

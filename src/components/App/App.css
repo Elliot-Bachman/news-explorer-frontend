@@ -6,6 +6,10 @@
 }
 
 .App h1 {
-  color: #333;
   margin-bottom: 20px;
+}
+
+/* Ensure header title doesn't inherit styles */
+.header__title {
+  color: #fff !important;
 }

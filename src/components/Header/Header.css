@@ -33,7 +33,7 @@
   font-family: var(--font-family-headers);
   font-weight: var(--font-weight-regular);
   line-height: 64px;
-  color: #fff;
+  color: #fff !important;
   margin: 0;
 }
 
@@ -70,6 +70,7 @@
     line-height: 40px;
     padding: 0;
     margin: 0 auto;
+    color: #fff !important;
   }
 
   .header__subtitle {
@@ -93,6 +94,7 @@
   .header__title {
     padding-top: 30px;
     padding-left: 16px;
+    color: #fff !important;
   }
 
   .header__subtitle {
@@ -109,6 +111,7 @@
     font-size: 28px;
     line-height: 32px;
     max-height: 140px;
+    color: #fff !important;
   }
 
   .header__subtitle {
