@@ -48,9 +48,9 @@
 
 .navigation__buttons {
   display: flex;
-  gap: 16px;
   flex: 0 0 auto;
   margin-left: 40px;
+  justify-content: flex-end;
 }
 
 .navigation__button {
@@ -67,6 +67,7 @@
   background-color: transparent;
   border: 1px solid #fff;
   color: #fff;
+  min-width: 100px;
 }
 
 .navigation__button_type_register {

@@ -1,6 +1,6 @@
 .search-form {
   display: flex;
-  gap: 16px;
+  position: relative;
   max-width: 608px;
   margin: 64px auto 0;
   padding: 0 16px;
@@ -8,7 +8,9 @@
 
 .search-form__input {
   flex: 1;
+  width: 100%;
   padding: 20px;
+  padding-right: 160px; /* Increase right padding to provide more space for the button */
   border: 1px solid #d1d2d6;
   border-radius: 100px;
   font-family: "Roboto", sans-serif;
@@ -16,15 +18,23 @@
   line-height: 1.5;
   color: #1a1b22;
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  height: 62px; /* Explicit height for consistency */
+  box-sizing: border-box;
 }
 
 .search-form__input:focus {
   border-color: #2f71e5;
+  box-shadow: 0 0 10px rgba(47, 113, 229, 0.1);
 }
 
 .search-form__button {
-  padding: 20px 56px;
+  position: absolute;
+  right: 16px; /* Position from right side */
+  top: 0;
+  height: 62px; /* Explicit height to match input */
+  padding: 0 56px;
   background-color: #2f71e5;
   border: none;
   border-radius: 100px;
@@ -33,16 +43,54 @@
   font-weight: 500;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 15px rgba(47, 113, 229, 0.2);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-form__button:hover {
   background-color: #347eff;
+  transform: translateX(-2px);
+}
+
+.search-form__button:active {
+  transform: translateX(0);
 }
 
 @media screen and (max-width: 768px) {
   .search-form {
     margin-top: 48px;
     padding: 0 16px;
+  }
+
+  .search-form__button {
+    padding: 0 32px;
+    font-size: 16px;
+    height: 58px; /* Slightly smaller height for tablet */
+  }
+
+  .search-form__input {
+    height: 58px; /* Slightly smaller height for tablet */
+    padding: 18px;
+    padding-right: 120px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-form__button {
+    padding: 0 24px;
+    font-size: 14px;
+    right: 12px;
+    height: 52px; /* Smaller height for mobile */
+  }
+
+  .search-form__input {
+    padding: 16px;
+    padding-right: 100px;
+    height: 52px; /* Smaller height for mobile */
+    font-size: 14px;
   }
 }

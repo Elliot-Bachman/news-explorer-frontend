@@ -51,6 +51,16 @@
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xl);
   color: #1a1b22;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInDown 0.5s forwards 0.1s;
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .modal__form {
