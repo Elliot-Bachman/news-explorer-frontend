@@ -1,35 +1,72 @@
 import React, { useState, useEffect } from "react";
 import "./SavedNews.css";
 import Preloader from "../Preloader/Preloader";
+import NewsCard from "../NewsCard/NewsCard";
 
-function SavedNews() {
+function SavedNews({ isLoggedIn }) {
   const [isLoading, setIsLoading] = useState(true);
   const [savedArticles, setSavedArticles] = useState([]);
 
-  // Simulate loading for demonstration purposes
+  const loadSavedArticles = () => {
+    const articles = JSON.parse(localStorage.getItem("savedArticles") || "[]");
+    setSavedArticles(articles);
+    setIsLoading(false);
+  };
+
   useEffect(() => {
+    // Add a small delay to simulate loading for demonstration purposes
     const timer = setTimeout(() => {
-      setIsLoading(false);
-      // You would typically fetch saved articles from an API here
-    }, 2000); // 2 seconds delay to demonstrate loading
+      loadSavedArticles();
+    }, 800);
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Listen for changes to localStorage
+  useEffect(() => {
+    const handleStorageChange = () => {
+      loadSavedArticles();
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    // We'll also listen for a custom event that our NewsCard component dispatches
+    window.addEventListener("articleRemoved", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("articleRemoved", handleStorageChange);
+    };
+  }, []);
+
+  const handleRemoveArticle = (articleToRemove) => {
+    const updatedArticles = savedArticles.filter(
+      (article) => article.title !== articleToRemove.title
+    );
+    setSavedArticles(updatedArticles);
+    localStorage.setItem("savedArticles", JSON.stringify(updatedArticles));
+  };
 
   return (
     <div className="saved-news">
       <div className="saved-news__container">
         <h1 className="saved-news__title">Saved Articles</h1>
         <p className="saved-news__description">
-          This is where you can find all your saved news articles.
+          Your favorite news articles, all in one place.
         </p>
         <div className="saved-news__content">
           {isLoading ? (
             <Preloader text="Loading saved articles..." />
           ) : savedArticles.length > 0 ? (
             <div className="saved-news__articles">
-              {/* Saved articles would be displayed here */}
-              <p>Your saved articles would be displayed here</p>
+              {savedArticles.map((article, index) => (
+                <NewsCard
+                  key={`${article.title}-${index}`}
+                  article={article}
+                  isLoggedIn={isLoggedIn}
+                  isSaved={true}
+                />
+              ))}
             </div>
           ) : (
             <p className="saved-news__empty-message">

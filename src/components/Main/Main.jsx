@@ -4,7 +4,15 @@ import Preloader from "../Preloader/Preloader";
 import About from "../About/About";
 import NewsCardList from "../NewsCardList/NewsCardList";
 
-function Main({ articles, isLoading, error, noResults }) {
+function Main({
+  articles,
+  isLoading,
+  error,
+  noResults,
+  visibleCount,
+  setVisibleCount,
+  isLoggedIn,
+}) {
   return (
     <main className="main">
       <div className="main__container">
@@ -16,14 +24,18 @@ function Main({ articles, isLoading, error, noResults }) {
             {isLoading ? (
               <Preloader text="Searching for news..." />
             ) : error ? (
-              <p className="main__error-message">{error}</p>
+              <p className="error">{error}</p>
             ) : noResults ? (
               <p className="main__empty-message">
-                Nothing found for your search. Please try again with different
-                keywords.
+                No articles found for that search. Try a different keyword.
               </p>
             ) : articles.length > 0 ? (
-              <NewsCardList articles={articles} />
+              <NewsCardList
+                articles={articles}
+                visibleCount={visibleCount}
+                setVisibleCount={setVisibleCount}
+                isLoggedIn={isLoggedIn}
+              />
             ) : (
               <p className="main__empty-message">
                 Use the search bar above to find news articles

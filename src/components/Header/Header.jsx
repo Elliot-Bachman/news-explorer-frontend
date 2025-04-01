@@ -8,6 +8,7 @@ function Header({
   onRegisterClick,
   handleSearch,
   currentPath,
+  isLoggedIn,
 }) {
   return (
     <header className="header">
@@ -17,6 +18,7 @@ function Header({
           onLogout={onLogout}
           onRegisterClick={onRegisterClick}
           currentPath={currentPath}
+          isLoggedIn={isLoggedIn}
         />
       </div>
       <div className="header__text-container">

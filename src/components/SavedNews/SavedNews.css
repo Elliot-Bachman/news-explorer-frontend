@@ -31,6 +31,13 @@
   align-items: center;
 }
 
+.saved-news__articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
 .saved-news__empty-message {
   font-family: var(--font-family-main);
   font-size: var(--font-size-m);

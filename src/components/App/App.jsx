@@ -17,6 +17,11 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [noResults, setNoResults] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(3);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // default: logged out
+
+  // Mock function to toggle login status for testing
+  const toggleLogin = () => setIsLoggedIn(!isLoggedIn);
 
   const handleLoginClick = () => {
     setIsLoginModalOpen(true);
@@ -44,17 +49,22 @@ function App() {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     console.log("Login form submitted");
-    // Form submission will be implemented in the next stage
+    // Mock successful login
+    setIsLoggedIn(true);
+    closeAllModals();
   };
 
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
     console.log("Register form submitted");
-    // Form submission will be implemented in the next stage
+    // Mock successful registration and auto-login
+    setIsLoggedIn(true);
+    closeAllModals();
   };
 
   const handleLogout = () => {
     console.log("Logout clicked");
+    setIsLoggedIn(false);
   };
 
   const handleSearch = async (searchQuery) => {
@@ -69,6 +79,7 @@ function App() {
         setNoResults(true);
       } else {
         setArticles(results);
+        setVisibleCount(3); // reset visible articles
       }
     } catch (err) {
       setError(
@@ -81,12 +92,34 @@ function App() {
 
   return (
     <div className="App">
+      {/* Dev-only login toggle button */}
+      {process.env.NODE_ENV === "development" && (
+        <button
+          onClick={toggleLogin}
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            zIndex: 1000,
+            padding: "10px",
+            background: "#2f71e5",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+        >
+          DEV: Toggle Login ({isLoggedIn ? "Logged In" : "Logged Out"})
+        </button>
+      )}
+
       <Header
         onLoginClick={handleLoginClick}
         onLogout={handleLogout}
         onRegisterClick={handleRegisterClick}
         handleSearch={handleSearch}
         currentPath={location.pathname}
+        isLoggedIn={isLoggedIn}
       />
       <Routes>
         <Route
@@ -97,10 +130,16 @@ function App() {
               isLoading={isLoading}
               error={error}
               noResults={noResults}
+              visibleCount={visibleCount}
+              setVisibleCount={setVisibleCount}
+              isLoggedIn={isLoggedIn}
             />
           }
         />
-        <Route path="/saved-news" element={<SavedNews />} />
+        <Route
+          path="/saved-news"
+          element={<SavedNews isLoggedIn={isLoggedIn} />}
+        />
       </Routes>
       <Footer />
 

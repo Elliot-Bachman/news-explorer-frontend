@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
 
-function Navigation({ onLoginClick, onLogout, onRegisterClick, currentPath }) {
-  // This is a temporary state for demo purposes. In a real app, this would come from context or state
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // This is for demonstration purposes - toggles between logged in and logged out
-  const handleAuthToggle = () => {
-    setIsLoggedIn(!isLoggedIn);
-  };
-
+function Navigation({
+  onLoginClick,
+  onLogout,
+  onRegisterClick,
+  currentPath,
+  isLoggedIn,
+}) {
   return (
     <nav className="navigation">
       <Link to="/" className="navigation__logo">
@@ -40,10 +38,7 @@ function Navigation({ onLoginClick, onLogout, onRegisterClick, currentPath }) {
         {isLoggedIn ? (
           <button
             className="navigation__button navigation__button_type_logout"
-            onClick={() => {
-              onLogout();
-              handleAuthToggle();
-            }}
+            onClick={onLogout}
           >
             Sign out
           </button>
