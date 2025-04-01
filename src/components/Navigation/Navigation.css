@@ -10,6 +10,16 @@
   box-sizing: border-box;
 }
 
+.navigation__left {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__right {
+  display: flex;
+  align-items: center;
+}
+
 .navigation__logo {
   font-family: "Roboto Slab", serif;
   font-size: 20px;
@@ -38,6 +48,10 @@
   transition: border-color 0.3s ease;
 }
 
+.navigation__link--saved {
+  margin-right: 16px;
+}
+
 .navigation__link:hover {
   border-bottom: 3px solid #fff;
 }
@@ -49,7 +63,6 @@
 .navigation__buttons {
   display: flex;
   flex: 0 0 auto;
-  margin-left: 40px;
   justify-content: flex-end;
 }
 
@@ -100,13 +113,13 @@
     gap: 16px;
   }
 
+  .navigation__link--saved {
+    margin-right: 12px;
+  }
+
   .navigation__button {
     padding: 8px 16px;
     font-size: 16px;
-  }
-
-  .navigation__buttons {
-    margin-left: 24px;
   }
 }
 
@@ -124,8 +137,11 @@
     gap: 12px;
   }
 
+  .navigation__link--saved {
+    margin-right: 10px;
+  }
+
   .navigation__buttons {
-    margin-left: 16px;
     gap: 12px;
   }
 }
@@ -149,13 +165,16 @@
     padding: 8px 4px;
   }
 
+  .navigation__link--saved {
+    margin-right: 8px;
+  }
+
   .navigation__button {
     padding: 6px 12px;
     font-size: 14px;
   }
 
   .navigation__buttons {
-    margin-left: 10px;
     gap: 8px;
   }
 }
@@ -179,13 +198,30 @@
     padding: 6px 3px;
   }
 
+  .navigation__link--saved {
+    margin-right: 6px;
+    font-size: 12px;
+  }
+
   .navigation__buttons {
-    margin-left: 8px;
     gap: 6px;
   }
 
   .navigation__button {
     padding: 5px 8px;
     font-size: 13px;
+  }
+
+  /* Stack navigation items vertically on very small screens */
+  .navigation__right {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    margin-top: -20px; /* Adjust vertical position */
+  }
+
+  .navigation__link--saved {
+    margin-right: 0;
+    margin-bottom: 4px;
   }
 }
