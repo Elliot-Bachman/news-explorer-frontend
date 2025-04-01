@@ -7,11 +7,16 @@ import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import { getNewsArticles } from "../../utils/NewsAPi";
 
 function App() {
   const location = useLocation();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [noResults, setNoResults] = useState(false);
 
   const handleLoginClick = () => {
     setIsLoginModalOpen(true);
@@ -52,8 +57,26 @@ function App() {
     console.log("Logout clicked");
   };
 
-  const handleSearch = (searchQuery) => {
-    console.log("Search query:", searchQuery);
+  const handleSearch = async (searchQuery) => {
+    setIsLoading(true);
+    setError(null);
+    setNoResults(false);
+    setArticles([]);
+
+    try {
+      const results = await getNewsArticles(searchQuery);
+      if (results.length === 0) {
+        setNoResults(true);
+      } else {
+        setArticles(results);
+      }
+    } catch (err) {
+      setError(
+        "Sorry, something went wrong during the request. Please try again later."
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -66,7 +89,17 @@ function App() {
         currentPath={location.pathname}
       />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route
+          path="/"
+          element={
+            <Main
+              articles={articles}
+              isLoading={isLoading}
+              error={error}
+              noResults={noResults}
+            />
+          }
+        />
         <Route path="/saved-news" element={<SavedNews />} />
       </Routes>
       <Footer />

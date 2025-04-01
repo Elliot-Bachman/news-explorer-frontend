@@ -6,22 +6,28 @@ function SearchForm({ handleSearch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSearch(searchQuery);
+    if (!searchQuery.trim()) {
+      alert("Please enter a keyword");
+      return;
+    }
+    handleSearch(searchQuery); // Trigger the API call from App.jsx
   };
 
   return (
-    <form className="search-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="search-form__input"
-        placeholder="Enter topic"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
-      <button type="submit" className="search-form__button">
-        Search
-      </button>
-    </form>
+    <section className="search-form-container">
+      <form className="search-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          className="search-form__input"
+          placeholder="Enter topic"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <button type="submit" className="search-form__button">
+          Search
+        </button>
+      </form>
+    </section>
   );
 }
 
