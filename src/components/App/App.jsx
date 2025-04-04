@@ -7,12 +7,14 @@ import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import SuccessModal from "../SuccessModal/SuccessModal";
 import { getNewsArticles } from "../../utils/NewsAPi";
 
 function App() {
   const location = useLocation();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -34,6 +36,7 @@ function App() {
   const closeAllModals = () => {
     setIsLoginModalOpen(false);
     setIsRegisterModalOpen(false);
+    setIsSuccessModalOpen(false);
   };
 
   const handleSwitchToRegister = () => {
@@ -43,6 +46,7 @@ function App() {
 
   const handleSwitchToLogin = () => {
     setIsRegisterModalOpen(false);
+    setIsSuccessModalOpen(false);
     setIsLoginModalOpen(true);
   };
 
@@ -57,9 +61,9 @@ function App() {
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
     console.log("Register form submitted");
-    // Mock successful registration and auto-login
-    setIsLoggedIn(true);
-    closeAllModals();
+    // Show success modal instead of auto-login
+    setIsRegisterModalOpen(false);
+    setIsSuccessModalOpen(true);
   };
 
   const handleLogout = () => {
@@ -155,6 +159,12 @@ function App() {
         onClose={closeAllModals}
         onLoginClick={handleSwitchToLogin}
         onSubmit={handleRegisterSubmit}
+      />
+
+      <SuccessModal
+        isOpen={isSuccessModalOpen}
+        onClose={closeAllModals}
+        onSignInClick={handleSwitchToLogin}
       />
     </div>
   );

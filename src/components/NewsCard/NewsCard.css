@@ -121,7 +121,7 @@
   background-color: white;
   border-radius: 8px;
   border: none;
-  background-image: url("/assets/images/unlike-button.svg");
+  background-image: url("/assets/images/Normal-like-button.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px 20px;
@@ -132,7 +132,7 @@
 
 /* When not saved but hovered */
 .news-card__save-button:hover {
-  background-image: url("/assets/images/like-button.png");
+  background-image: url("/assets/images/unlike-button.svg");
   transform: scale(1.05);
 }
 
