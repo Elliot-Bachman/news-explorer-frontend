@@ -91,47 +91,59 @@
   position: absolute;
   top: 24px;
   right: 24px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
-  padding: 8px 12px;
-  font-family: "Roboto", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 2;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
 }
 
 .news-card__button--remove {
   background-color: white;
-  color: #f50057;
-  border: 1px solid #f50057;
+  background-image: url("/assets/images/trash.svg");
 }
 
 .news-card__button--remove:hover {
-  background-color: #f50057;
-  color: white;
+  transform: scale(1.05);
 }
 
 .news-card__save-button {
   position: absolute;
   top: 24px;
   right: 24px;
+  width: 40px;
+  height: 40px;
   background-color: white;
-  color: #2f71e5;
-  border: 1px solid #2f71e5;
   border-radius: 8px;
-  padding: 8px 12px;
-  font-family: "Roboto", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
+  border: none;
+  background-image: url("/assets/images/unlike-button.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 2;
 }
 
+/* When not saved but hovered */
 .news-card__save-button:hover {
-  background-color: #2f71e5;
-  color: white;
+  background-image: url("/assets/images/like-button.png");
+  transform: scale(1.05);
+}
+
+/* When saved */
+.news-card__save-button.news-card__save-button--saved {
+  background-image: url("/assets/images/like-button.png");
+}
+
+/* When saved and hovered */
+.news-card__save-button.news-card__save-button--saved:hover {
+  background-image: url("/assets/images/unlike-button.svg");
 }
 
 @media screen and (max-width: 768px) {

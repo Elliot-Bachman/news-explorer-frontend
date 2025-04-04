@@ -1,9 +1,54 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { formatDate } from "../../utils/helpers";
 import "./NewsCard.css";
 
 function NewsCard({ article, isLoggedIn, isSaved = false }) {
   const { title, description, url, urlToImage, publishedAt, source } = article;
+  const [isArticleSaved, setIsArticleSaved] = useState(isSaved);
+
+  // Check if the article is already saved in localStorage
+  useEffect(() => {
+    if (!isSaved && isLoggedIn) {
+      const savedArticles = JSON.parse(
+        localStorage.getItem("savedArticles") || "[]"
+      );
+      const articleAlreadySaved = savedArticles.some(
+        (savedArticle) => savedArticle.title === title
+      );
+      setIsArticleSaved(articleAlreadySaved);
+    }
+  }, [isSaved, title, isLoggedIn]);
+
+  // Listen for changes to localStorage
+  useEffect(() => {
+    const handleStorageChange = (e) => {
+      if (e.type === "articleRemoved" && e.detail && e.detail.title === title) {
+        setIsArticleSaved(false);
+      } else if (
+        e.type === "articleSaved" &&
+        e.detail &&
+        e.detail.title === title
+      ) {
+        setIsArticleSaved(true);
+      } else {
+        const savedArticles = JSON.parse(
+          localStorage.getItem("savedArticles") || "[]"
+        );
+        const articleIsSaved = savedArticles.some(
+          (savedArticle) => savedArticle.title === title
+        );
+        setIsArticleSaved(articleIsSaved);
+      }
+    };
+
+    window.addEventListener("articleRemoved", handleStorageChange);
+    window.addEventListener("articleSaved", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("articleRemoved", handleStorageChange);
+      window.removeEventListener("articleSaved", handleStorageChange);
+    };
+  }, [title]);
 
   const handleSaveArticle = () => {
     // In a real app, this would call an API to save the article
@@ -22,9 +67,14 @@ function NewsCard({ article, isLoggedIn, isSaved = false }) {
     if (!isAlreadySaved) {
       savedArticles.push(article);
       localStorage.setItem("savedArticles", JSON.stringify(savedArticles));
-      alert("Article saved!"); // Provide feedback to user
+      setIsArticleSaved(true);
+      // Dispatch event to notify other components
+      window.dispatchEvent(
+        new CustomEvent("articleSaved", { detail: { title } })
+      );
+      console.log("Article saved to your list!"); // Provide feedback in console instead of alert
     } else {
-      alert("This article is already saved.");
+      console.log("This article is already saved in your list.");
     }
   };
 
@@ -40,8 +90,9 @@ function NewsCard({ article, isLoggedIn, isSaved = false }) {
     );
     localStorage.setItem("savedArticles", JSON.stringify(updatedArticles));
 
+    setIsArticleSaved(false);
     // Provide feedback
-    alert("Article removed!");
+    console.log("Article removed from your list!"); // Use console instead of alert
 
     // Dispatch a custom event to notify components that an article was removed
     window.dispatchEvent(
@@ -57,15 +108,20 @@ function NewsCard({ article, isLoggedIn, isSaved = false }) {
         <button
           className="news-card__button news-card__button--remove"
           onClick={handleRemoveArticle}
-        >
-          Remove
-        </button>
+          aria-label="Remove article"
+          title="Remove from saved articles"
+        />
       );
     } else {
       return (
-        <button className="news-card__save-button" onClick={handleSaveArticle}>
-          Save
-        </button>
+        <button
+          className={`news-card__save-button ${
+            isArticleSaved ? "news-card__save-button--saved" : ""
+          }`}
+          onClick={isArticleSaved ? handleRemoveArticle : handleSaveArticle}
+          aria-label={isArticleSaved ? "Remove from saved" : "Save article"}
+          title={isArticleSaved ? "Remove from saved articles" : "Save article"}
+        />
       );
     }
   };
