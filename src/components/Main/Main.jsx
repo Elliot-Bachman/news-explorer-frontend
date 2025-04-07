@@ -18,7 +18,7 @@ function Main({
       <div className="main__container">
         <section className="main__section">
           {articles.length > 0 && (
-            <h2 className="main__title">Search Results</h2>
+            <h2 className="main__title">News Explorer</h2>
           )}
           <div className="main__content">
             {isLoading ? (
@@ -38,7 +38,7 @@ function Main({
               />
             ) : (
               <p className="main__empty-message">
-                Use the search bar above to find news articles
+                Use the search bar above to find more news articles
               </p>
             )}
           </div>

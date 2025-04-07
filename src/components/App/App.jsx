@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
@@ -9,6 +9,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
 import { getNewsArticles } from "../../utils/NewsAPi";
+import defaultArticles from "../../utils/defaultNews";
 
 function App() {
   const location = useLocation();
@@ -21,6 +22,11 @@ function App() {
   const [noResults, setNoResults] = useState(false);
   const [visibleCount, setVisibleCount] = useState(3);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // default: logged out
+
+  // Load default articles when the app mounts
+  useEffect(() => {
+    setArticles(defaultArticles);
+  }, []);
 
   // Mock function to toggle login status for testing
   const toggleLogin = () => setIsLoggedIn(!isLoggedIn);
