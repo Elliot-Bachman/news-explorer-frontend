@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
+import logoutIcon from "/assets/images/logout.svg";
 
 function Navigation({
   onLoginClick,
@@ -15,7 +16,9 @@ function Navigation({
         <Link to="/" className="navigation__logo">
           NewsExplorer
         </Link>
+      </div>
 
+      <div className="navigation__right">
         <div className="navigation__links">
           <Link
             to="/"
@@ -25,20 +28,18 @@ function Navigation({
           >
             Home
           </Link>
-        </div>
-      </div>
 
-      <div className="navigation__right">
-        {isLoggedIn && (
-          <Link
-            to="/saved-news"
-            className={`navigation__link navigation__link--saved ${
-              currentPath === "/saved-news" ? "navigation__link_active" : ""
-            }`}
-          >
-            Saved Articles
-          </Link>
-        )}
+          {isLoggedIn && (
+            <Link
+              to="/saved-news"
+              className={`navigation__link navigation__link--saved ${
+                currentPath === "/saved-news" ? "navigation__link_active" : ""
+              }`}
+            >
+              Saved Articles
+            </Link>
+          )}
+        </div>
 
         <div className="navigation__buttons">
           {isLoggedIn ? (
@@ -46,7 +47,12 @@ function Navigation({
               className="navigation__button navigation__button_type_logout"
               onClick={onLogout}
             >
-              Sign out
+              Elliot
+              <img
+                src={logoutIcon}
+                alt="Logout"
+                className="navigation__logout-icon"
+              />
             </button>
           ) : (
             <button
