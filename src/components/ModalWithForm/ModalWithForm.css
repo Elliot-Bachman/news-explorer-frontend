@@ -25,7 +25,7 @@
   background-color: white;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   border-radius: 16px;
-  padding: 36px;
+  padding: 34px 36px 28px;
   position: relative;
   box-sizing: border-box;
 }
@@ -83,18 +83,25 @@
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-m);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
   width: 100%;
+  height: 64px;
 }
 
-.modal__submit-button:hover {
+.modal__submit-button_disabled {
+  background-color: #e6e8eb;
+  color: #b6bcbf;
+  cursor: not-allowed;
+}
+
+.modal__submit-button:hover:not(.modal__submit-button_disabled) {
   background-color: #347eff;
 }
 
 @media screen and (max-width: 768px) {
   .modal__content {
     max-width: 380px;
-    padding: 30px;
+    padding: 36px;
   }
 
   .modal__close-button {

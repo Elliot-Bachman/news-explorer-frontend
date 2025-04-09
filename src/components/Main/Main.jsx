@@ -38,7 +38,7 @@ function Main({
               />
             ) : (
               <p className="main__empty-message">
-                Use the search bar above to find more news articles
+                Use the search bar above to find news articles
               </p>
             )}
           </div>
