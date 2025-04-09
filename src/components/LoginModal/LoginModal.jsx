@@ -12,10 +12,11 @@ function LoginModal({ isOpen, onClose, onRegisterClick, onSubmit }) {
     <ModalWithForm
       title="Sign in"
       name="login"
-      buttonText="Sign in"
+      buttonText=""
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={onSubmit}
+      hideDefaultButton={true}
     >
       <label className="modal__label">
         Email
@@ -37,10 +38,17 @@ function LoginModal({ isOpen, onClose, onRegisterClick, onSubmit }) {
           required
         />
       </label>
+      <button type="submit" className="modal__submit-button">
+        Sign in
+      </button>
       <div className="login-modal__footer">
         <p className="login-modal__text">
           or{" "}
-          <button className="login-modal__link" onClick={handleRegisterClick}>
+          <button
+            type="button"
+            className="login-modal__link"
+            onClick={handleRegisterClick}
+          >
             Sign up
           </button>
         </p>

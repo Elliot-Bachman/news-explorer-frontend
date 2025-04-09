@@ -48,14 +48,14 @@
 
 .modal__title {
   margin: 0 0 24px;
-  font-family: var(--font-family-headers);
-  font-weight: var(--font-weight-bold);
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
   font-size: var(--font-size-xl);
   color: #1a1b22;
   opacity: 0;
   transform: translateY(-10px);
   animation: fadeInDown 0.5s forwards 0.1s;
-  text-align: center;
+  text-align: left;
   width: 100%;
 }
 
@@ -116,11 +116,26 @@
   .modal__close-button {
     right: 16px;
     top: 16px;
+    width: 24px;
+    height: 24px;
     background-size: 24px 24px;
   }
 
   .modal__title {
     margin-bottom: 20px;
     font-size: var(--font-size-l);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__content {
+    max-width: 290px;
+    padding: 16px;
+  }
+
+  .modal__close-button {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
   }
 }

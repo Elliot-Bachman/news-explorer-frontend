@@ -99,6 +99,21 @@
   .success-modal__close-button {
     right: 16px;
     top: 16px;
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .success-modal__container {
+    max-width: 290px;
+    padding: 16px;
+  }
+
+  .success-modal__close-button {
+    width: 24px;
+    height: 24px;
     background-size: 24px 24px;
   }
 }
