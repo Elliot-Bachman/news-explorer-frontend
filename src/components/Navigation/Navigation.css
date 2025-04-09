@@ -74,6 +74,8 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  height: 48px;
+  width: 176px;
 }
 
 .navigation__button_type_login {
@@ -81,6 +83,7 @@
   border: 1px solid #fff;
   color: #fff;
   min-width: 100px;
+  line-height: 24px;
 }
 
 .navigation__button_type_register {
