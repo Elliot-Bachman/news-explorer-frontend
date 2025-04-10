@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 104px;
-  height: 80px;
+  padding: 31px 104px;
   background-color: transparent;
   box-shadow: none;
   width: 100%;
@@ -39,7 +38,7 @@
 
 .navigation__link {
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: #fff;
   text-decoration: none;
@@ -76,6 +75,7 @@
   transition: all 0.3s ease;
   height: 48px;
   width: 176px;
+  margin-left: 42px;
 }
 
 .navigation__button_type_login {
