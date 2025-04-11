@@ -3,7 +3,8 @@ import { formatDate } from "../../utils/helpers";
 import "./NewsCard.css";
 
 function NewsCard({ article, isLoggedIn, isSaved = false, onLoginClick }) {
-  const { title, description, url, urlToImage, publishedAt, source } = article;
+  const { title, description, url, urlToImage, publishedAt, source, keyword } =
+    article;
   const [isArticleSaved, setIsArticleSaved] = useState(isSaved);
 
   // Check if the article is already saved in localStorage
@@ -61,6 +62,12 @@ function NewsCard({ article, isLoggedIn, isSaved = false, onLoginClick }) {
     // In a real app, this would call an API to save the article
     console.log("Saving article:", title);
 
+    // Add keyword based on source name if not present
+    const articleToSave = { ...article };
+    if (!articleToSave.keyword) {
+      articleToSave.keyword = source?.name || "News";
+    }
+
     // For demo purposes, we can save to localStorage
     const savedArticles = JSON.parse(
       localStorage.getItem("savedArticles") || "[]"
@@ -72,7 +79,7 @@ function NewsCard({ article, isLoggedIn, isSaved = false, onLoginClick }) {
     );
 
     if (!isAlreadySaved) {
-      savedArticles.push(article);
+      savedArticles.push(articleToSave);
       localStorage.setItem("savedArticles", JSON.stringify(savedArticles));
       setIsArticleSaved(true);
       // Dispatch event to notify other components
@@ -156,6 +163,9 @@ function NewsCard({ article, isLoggedIn, isSaved = false, onLoginClick }) {
   // Format the date to be more readable
   const formattedDate = formatDate(publishedAt);
 
+  // Determine the keyword to display (use source name if no keyword provided)
+  const displayKeyword = keyword || source?.name || "News";
+
   return (
     <div className={`news-card ${!isLoggedIn ? "not-logged-in" : ""}`}>
       {urlToImage && (
@@ -170,9 +180,24 @@ function NewsCard({ article, isLoggedIn, isSaved = false, onLoginClick }) {
                 "https://via.placeholder.com/400x200?text=No+Image+Available";
             }}
           />
+
+          {/* Card elements wrapper - only for saved articles */}
+          {isSaved && (
+            <div className="news-card__elements-wrapper">
+              {/* Keyword card */}
+              <span className="news-card__keyword">{displayKeyword}</span>
+
+              {/* Action button container */}
+              <div className="news-card__action-container">
+                {renderActionButton()}
+              </div>
+            </div>
+          )}
+
+          {/* Non-saved articles only get the action button */}
+          {!isSaved && renderActionButton()}
         </div>
       )}
-      {renderActionButton()}
       <div className="news-card__content">
         <p className="news-card__date">{formattedDate}</p>
         <h3 className="news-card__title">{title}</h3>

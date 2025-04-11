@@ -59,11 +59,9 @@
 
 .search-form__button:hover {
   background-color: #347eff;
-  transform: translateX(-2px);
 }
 
 .search-form__button:active {
-  transform: translateX(0);
 }
 
 @media screen and (max-width: 768px) {

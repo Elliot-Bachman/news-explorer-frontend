@@ -231,3 +231,28 @@
     margin-top: 0;
   }
 }
+
+/* Saved articles page navigation styles */
+.navigation--saved-articles {
+  background-color: white;
+  border-bottom: none;
+}
+
+.navigation--saved-articles .navigation__logo,
+.navigation--saved-articles .navigation__link,
+.navigation--saved-articles .navigation__button_type_logout {
+  color: #1a1b22;
+}
+
+.navigation--saved-articles .navigation__link:hover,
+.navigation--saved-articles .navigation__link_active {
+  border-bottom: 3px solid #1a1b22;
+}
+
+.navigation--saved-articles .navigation__button_type_logout {
+  border: 1px solid #1a1b22;
+}
+
+.navigation--saved-articles .navigation__logout-icon {
+  filter: none; /* Revert to original color instead of white */
+}

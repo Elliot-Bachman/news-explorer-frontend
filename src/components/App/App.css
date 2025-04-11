@@ -8,3 +8,23 @@
 .header__title {
   color: #fff !important;
 }
+
+/* Navigation container for saved articles page */
+.navigation-container {
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+/* Custom cursor for all main buttons */
+.navigation__button,
+.search-form__button,
+.news-card__save-button,
+.news-card-list__show-more,
+.modal__submit-button,
+.modal__close-button,
+.success-modal__close-button,
+.news-card__button--remove {
+  cursor: url("/assets/images/Custom-Cursor.svg"), pointer !important;
+}

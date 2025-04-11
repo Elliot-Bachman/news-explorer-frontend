@@ -9,6 +9,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
 import { getNewsArticles } from "../../utils/NewsAPi";
+import Navigation from "../Navigation/Navigation";
 
 function App() {
   const location = useLocation();
@@ -21,6 +22,9 @@ function App() {
   const [noResults, setNoResults] = useState(false);
   const [visibleCount, setVisibleCount] = useState(3);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // default: logged out
+
+  // Check if we're on the saved articles page
+  const isSavedArticlesPage = location.pathname === "/saved-news";
 
   const handleLoginClick = () => {
     setIsLoginModalOpen(true);
@@ -93,14 +97,30 @@ function App() {
 
   return (
     <div className="App">
-      <Header
-        onLoginClick={handleLoginClick}
-        onLogout={handleLogout}
-        onRegisterClick={handleRegisterClick}
-        handleSearch={handleSearch}
-        currentPath={location.pathname}
-        isLoggedIn={isLoggedIn}
-      />
+      {/* Only show the full header on the home page */}
+      {!isSavedArticlesPage ? (
+        <Header
+          onLoginClick={handleLoginClick}
+          onLogout={handleLogout}
+          onRegisterClick={handleRegisterClick}
+          handleSearch={handleSearch}
+          currentPath={location.pathname}
+          isLoggedIn={isLoggedIn}
+        />
+      ) : (
+        /* For saved articles page, only render the Navigation component */
+        <div className="navigation-container">
+          <Navigation
+            onLoginClick={handleLoginClick}
+            onLogout={handleLogout}
+            onRegisterClick={handleRegisterClick}
+            currentPath={location.pathname}
+            isLoggedIn={isLoggedIn}
+            userName="Elliot"
+          />
+        </div>
+      )}
+
       <Routes>
         <Route
           path="/"
@@ -123,6 +143,7 @@ function App() {
             <SavedNews
               isLoggedIn={isLoggedIn}
               onLoginClick={handleLoginClick}
+              user={{ name: "Elliot" }}
             />
           }
         />

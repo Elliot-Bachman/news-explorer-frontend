@@ -9,9 +9,17 @@ function Navigation({
   onRegisterClick,
   currentPath,
   isLoggedIn,
+  userName = "Test",
 }) {
+  // Determine if we're on the saved articles page
+  const isSavedArticlesPage = currentPath === "/saved-news";
+
   return (
-    <nav className="navigation">
+    <nav
+      className={`navigation ${
+        isSavedArticlesPage ? "navigation--saved-articles" : ""
+      }`}
+    >
       <div className="navigation__left">
         <Link to="/" className="navigation__logo">
           NewsExplorer
@@ -33,10 +41,10 @@ function Navigation({
             <Link
               to="/saved-news"
               className={`navigation__link navigation__link--saved ${
-                currentPath === "/saved-news" ? "navigation__link_active" : ""
+                isSavedArticlesPage ? "navigation__link_active" : ""
               }`}
             >
-              Saved Articles
+              Saved articles
             </Link>
           )}
         </div>
@@ -47,7 +55,7 @@ function Navigation({
               className="navigation__button navigation__button_type_logout"
               onClick={onLogout}
             >
-              Elliot
+              {userName}
               <img
                 src={logoutIcon}
                 alt="Logout"
