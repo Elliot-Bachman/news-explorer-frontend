@@ -68,12 +68,7 @@ function SavedNews({ isLoggedIn }) {
                 />
               ))}
             </div>
-          ) : (
-            <p className="saved-news__empty-message">
-              You don't have any saved articles yet. Browse for news and save
-              the ones you like!
-            </p>
-          )}
+          ) : null}
         </div>
       </div>
     </div>

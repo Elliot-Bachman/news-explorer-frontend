@@ -22,9 +22,6 @@ function App() {
   const [visibleCount, setVisibleCount] = useState(3);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // default: logged out
 
-  // Mock function to toggle login status for testing
-  const toggleLogin = () => setIsLoggedIn(!isLoggedIn);
-
   const handleLoginClick = () => {
     setIsLoginModalOpen(true);
   };
@@ -96,27 +93,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* Dev-only login toggle button */}
-      {process.env.NODE_ENV === "development" && (
-        <button
-          onClick={toggleLogin}
-          style={{
-            position: "fixed",
-            bottom: "20px",
-            right: "20px",
-            zIndex: 1000,
-            padding: "10px",
-            background: "#2f71e5",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
-          DEV: Toggle Login ({isLoggedIn ? "Logged In" : "Logged Out"})
-        </button>
-      )}
-
       <Header
         onLoginClick={handleLoginClick}
         onLogout={handleLogout}

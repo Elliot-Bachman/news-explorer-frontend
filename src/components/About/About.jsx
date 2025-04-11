@@ -13,12 +13,15 @@ function About() {
       <div className="about__info">
         <h3 className="about__title">About the author</h3>
         <p className="about__paragraph">
-          Hello, I'm Elliot Bachman. I'm a full stack engineer proficient in
-          JavaScript, React, Express, Node, HTML, CSS.
+          My name is Elliot Bachman. I am an upcoming full stack software
+          engineer proficient in JavaScript, React, Express, Node, HTML, CSS. I
+          am currently enrolled in the Full Stack Developer program at
+          TripleTen. I look forward to learning more about software development
+          in the future!
         </p>
         <p className="about__paragraph">
-          I started learning to code at TripleTen Bootcamp. Learning to code has
-          been a difficult yet rewarding journey.
+          I look forward to learning more about software development in the
+          future!
         </p>
       </div>
     </section>

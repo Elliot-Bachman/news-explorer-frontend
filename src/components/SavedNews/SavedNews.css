@@ -37,10 +37,3 @@
   gap: 24px;
   width: 100%;
 }
-
-.saved-news__empty-message {
-  font-family: var(--font-family-main);
-  font-size: var(--font-size-m);
-  color: #999;
-  text-align: center;
-}

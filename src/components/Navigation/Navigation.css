@@ -99,6 +99,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  width: 112px;
 }
 
 .navigation__logout-icon {

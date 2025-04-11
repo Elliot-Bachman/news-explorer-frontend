@@ -1,12 +1,7 @@
 .App {
-  text-align: center;
   padding: 0;
   max-width: 100%;
   overflow-x: hidden;
-}
-
-.App h1 {
-  margin-bottom: 20px;
 }
 
 /* Ensure header title doesn't inherit styles */

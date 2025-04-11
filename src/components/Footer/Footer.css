@@ -2,15 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 40px;
+  padding: 30px 40px 28px;
   background-color: white;
+  margin-right: 41px;
+  margin-left: 41px;
 }
 
 .footer__text {
   font-size: 16px;
   line-height: 22px;
   color: #aaa;
-  margin: 0;
   font-weight: 400;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
