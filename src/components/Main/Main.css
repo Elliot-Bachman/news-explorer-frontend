@@ -1,11 +1,19 @@
 .main {
-  padding: 80px;
-  margin-left: 24px;
+  padding: 80px 0;
+  margin: 0;
+  background-color: #f5f6f7;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent potential overflow issues */
 }
 
 .main__container {
   max-width: 1200px;
-  background-color: #f5f6f7;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto; /* Center the container */
+  padding: 0 20px; /* Add horizontal padding */
 }
 
 .main__section {
@@ -39,4 +47,24 @@
   margin: 0 auto;
   line-height: 1.5;
   box-shadow: 0 2px 10px rgba(255, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 60px 0;
+  }
+
+  .main__container {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main {
+    padding: 40px 0;
+  }
+
+  .main__container {
+    padding: 0 20px;
+  }
 }
