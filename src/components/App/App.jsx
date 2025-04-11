@@ -113,12 +113,18 @@ function App() {
               visibleCount={visibleCount}
               setVisibleCount={setVisibleCount}
               isLoggedIn={isLoggedIn}
+              onLoginClick={handleLoginClick}
             />
           }
         />
         <Route
           path="/saved-news"
-          element={<SavedNews isLoggedIn={isLoggedIn} />}
+          element={
+            <SavedNews
+              isLoggedIn={isLoggedIn}
+              onLoginClick={handleLoginClick}
+            />
+          }
         />
       </Routes>
       <Footer />

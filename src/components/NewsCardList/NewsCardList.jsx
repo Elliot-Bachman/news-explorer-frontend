@@ -2,7 +2,13 @@ import React from "react";
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
 
-function NewsCardList({ articles, visibleCount, setVisibleCount, isLoggedIn }) {
+function NewsCardList({
+  articles,
+  visibleCount,
+  setVisibleCount,
+  isLoggedIn,
+  onLoginClick,
+}) {
   return (
     <div className="news-card-list-container">
       <div className="news-card-list">
@@ -11,6 +17,7 @@ function NewsCardList({ articles, visibleCount, setVisibleCount, isLoggedIn }) {
             key={article.url || index}
             article={article}
             isLoggedIn={isLoggedIn}
+            onLoginClick={onLoginClick}
           />
         ))}
       </div>

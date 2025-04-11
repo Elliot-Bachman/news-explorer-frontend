@@ -3,7 +3,7 @@ import "./SavedNews.css";
 import Preloader from "../Preloader/Preloader";
 import NewsCard from "../NewsCard/NewsCard";
 
-function SavedNews({ isLoggedIn }) {
+function SavedNews({ isLoggedIn, onLoginClick }) {
   const [isLoading, setIsLoading] = useState(true);
   const [savedArticles, setSavedArticles] = useState([]);
 
@@ -65,6 +65,7 @@ function SavedNews({ isLoggedIn }) {
                   article={article}
                   isLoggedIn={isLoggedIn}
                   isSaved={true}
+                  onLoginClick={onLoginClick}
                 />
               ))}
             </div>

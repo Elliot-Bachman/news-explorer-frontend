@@ -12,6 +12,7 @@ function Main({
   visibleCount,
   setVisibleCount,
   isLoggedIn,
+  onLoginClick,
 }) {
   return (
     <main className="main">
@@ -31,6 +32,7 @@ function Main({
                 visibleCount={visibleCount}
                 setVisibleCount={setVisibleCount}
                 isLoggedIn={isLoggedIn}
+                onLoginClick={onLoginClick}
               />
             ) : null}
           </div>

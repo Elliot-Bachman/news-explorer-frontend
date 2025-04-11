@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { formatDate } from "../../utils/helpers";
 import "./NewsCard.css";
 
-function NewsCard({ article, isLoggedIn, isSaved = false }) {
+function NewsCard({ article, isLoggedIn, isSaved = false, onLoginClick }) {
   const { title, description, url, urlToImage, publishedAt, source } = article;
   const [isArticleSaved, setIsArticleSaved] = useState(isSaved);
 
@@ -49,6 +49,13 @@ function NewsCard({ article, isLoggedIn, isSaved = false }) {
       window.removeEventListener("articleSaved", handleStorageChange);
     };
   }, [title]);
+
+  // Handle button click for non-logged in users
+  const handleNonLoggedInClick = () => {
+    if (onLoginClick && typeof onLoginClick === "function") {
+      onLoginClick();
+    }
+  };
 
   const handleSaveArticle = () => {
     // In a real app, this would call an API to save the article
@@ -101,15 +108,17 @@ function NewsCard({ article, isLoggedIn, isSaved = false }) {
   };
 
   const renderActionButton = () => {
-    if (!isLoggedIn) return null;
-
     if (isSaved) {
       return (
         <button
           className="news-card__button news-card__button--remove"
-          onClick={handleRemoveArticle}
+          onClick={isLoggedIn ? handleRemoveArticle : handleNonLoggedInClick}
           aria-label="Remove article"
-          title="Remove from saved articles"
+          title={
+            isLoggedIn
+              ? "Remove from saved articles"
+              : "Sign in to save articles"
+          }
         />
       );
     } else {
@@ -118,9 +127,27 @@ function NewsCard({ article, isLoggedIn, isSaved = false }) {
           className={`news-card__save-button ${
             isArticleSaved ? "news-card__save-button--saved" : ""
           }`}
-          onClick={isArticleSaved ? handleRemoveArticle : handleSaveArticle}
-          aria-label={isArticleSaved ? "Remove from saved" : "Save article"}
-          title={isArticleSaved ? "Remove from saved articles" : "Save article"}
+          onClick={
+            isLoggedIn
+              ? isArticleSaved
+                ? handleRemoveArticle
+                : handleSaveArticle
+              : handleNonLoggedInClick
+          }
+          aria-label={
+            isLoggedIn
+              ? isArticleSaved
+                ? "Remove from saved"
+                : "Save article"
+              : "Sign in to save articles"
+          }
+          title={
+            isLoggedIn
+              ? isArticleSaved
+                ? "Remove from saved articles"
+                : "Save article"
+              : "Sign in to save articles"
+          }
         />
       );
     }
@@ -130,7 +157,7 @@ function NewsCard({ article, isLoggedIn, isSaved = false }) {
   const formattedDate = formatDate(publishedAt);
 
   return (
-    <div className="news-card">
+    <div className={`news-card ${!isLoggedIn ? "not-logged-in" : ""}`}>
       {urlToImage && (
         <div className="news-card__image-container">
           <img
@@ -151,14 +178,6 @@ function NewsCard({ article, isLoggedIn, isSaved = false }) {
         <h3 className="news-card__title">{title}</h3>
         <p className="news-card__description">{description}</p>
         <p className="news-card__source">{source?.name}</p>
-        <a
-          className="news-card__link"
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Read more
-        </a>
       </div>
     </div>
   );

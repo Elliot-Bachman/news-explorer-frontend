@@ -26,9 +26,11 @@
 
 .news-card__content {
   padding: 20px;
+  padding-bottom: 60px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .news-card__date {
@@ -70,21 +72,9 @@
   font-size: 16px;
   color: #b6bcbf;
   margin: 0;
-}
-
-.news-card__link {
-  padding: 12px 20px;
-  text-align: right;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #2f71e5;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-
-.news-card__link:hover {
-  opacity: 0.8;
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
 }
 
 .news-card__button {
@@ -128,6 +118,11 @@
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 2;
+}
+
+/* When not logged in, show cursor and slight transparency */
+.not-logged-in .news-card__save-button {
+  cursor: pointer;
 }
 
 /* When not saved but hovered */
