@@ -8,8 +8,8 @@
 .news-card-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-  margin: 32px 0;
+  gap: 16px;
+  margin: 0 0 32px 0;
   width: 100%;
 }
 
@@ -51,7 +51,7 @@
 @media screen and (max-width: 480px) {
   .news-card-list {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
   }
 
   .news-card-list__show-more {

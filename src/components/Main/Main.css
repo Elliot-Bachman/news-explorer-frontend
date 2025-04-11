@@ -1,5 +1,6 @@
 .main {
   padding: 80px;
+  margin-left: 24px;
 }
 
 .main__container {
@@ -15,7 +16,7 @@
   font-size: var(--font-size-xxl);
   font-weight: var(--font-weight-bold);
   color: #1a1b22;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
 }
 
 .main__content {
