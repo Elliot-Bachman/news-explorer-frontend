@@ -5,6 +5,12 @@
   width: 100%;
   box-sizing: border-box;
   overflow: hidden; /* Prevent potential overflow issues */
+  min-height: 0; /* Allow shrinking when no results */
+}
+
+/* When search results are displayed, ensure the main section has enough height */
+.main.with-results {
+  min-height: 282px; /* Minimum height to show results properly */
 }
 
 .main__container {
@@ -32,6 +38,23 @@
   align-items: center;
 }
 
+/* New class to position the About component right against the Header on the main page */
+.main-page-about-wrapper {
+  margin-top: -80px; /* Reduce main's bottom margin */
+  position: relative;
+  z-index: 1;
+}
+
+/* Make sure the About section within this wrapper touches the header */
+.main-page-about-wrapper .about {
+  margin-top: -174px; /* Completely eliminate the gap between header and about section */
+}
+
+/* When there are search results, adjust the positioning */
+.with-results + .main-page-about-wrapper .about {
+  margin-top: -55px; /* Revert to original about section margin when results are shown */
+}
+
 .error {
   font-family: var(--font-family-main);
   font-size: var(--font-size-m);
@@ -55,6 +78,15 @@
   .main__container {
     padding: 0 40px;
   }
+
+  /* Adjust the wrapper margin for medium screens */
+  .main-page-about-wrapper {
+    margin-top: -60px;
+  }
+
+  .main-page-about-wrapper .about {
+    margin-top: -134px; /* Adjusted for medium screens */
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -64,5 +96,14 @@
 
   .main__container {
     padding: 0 16px;
+  }
+
+  /* Adjust the wrapper margin for small screens */
+  .main-page-about-wrapper {
+    margin-top: -40px;
+  }
+
+  .main-page-about-wrapper .about {
+    margin-top: -114px; /* Adjusted for small screens */
   }
 }

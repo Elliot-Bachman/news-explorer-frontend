@@ -15,9 +15,12 @@ function Main({
   isLoggedIn,
   onLoginClick,
 }) {
+  // Add a class that indicates if search results are being displayed
+  const mainClass = articles.length > 0 ? "main with-results" : "main";
+
   return (
     <>
-      <main className="main">
+      <main className={mainClass}>
         <div className="main__container">
           <section className="main__section">
             {articles.length > 0 && (
@@ -44,8 +47,10 @@ function Main({
         </div>
       </main>
 
-      {/* About section - completely outside the main element */}
-      <About />
+      {/* Wrap the About component with a div that has a specific class only for the main page */}
+      <div className="main-page-about-wrapper">
+        <About />
+      </div>
     </>
   );
 }
