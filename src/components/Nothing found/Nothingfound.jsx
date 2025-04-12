@@ -1,11 +1,11 @@
 import "./NothingFound.css";
-import NotFound from "/assets/images/not-found_v1.svg";
+import NotFoundIcon from "../../assets/not-found_v1.svg";
 
 function NothingFound() {
   return (
     <div className="nothing-found">
       <img
-        src={NotFound}
+        src={NotFoundIcon}
         alt="Nothing Found"
         className="nothing-found__image"
       />

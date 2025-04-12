@@ -97,12 +97,12 @@
 
 .news-card__button--remove {
   background-color: white;
-  background-image: url("/assets/images/trashwithnocursor.svg");
+  background-image: url("../../assets/trashwithnocursor.svg");
 }
 
 .news-card__button--remove:hover {
   transform: scale(1.05);
-  background-image: url("/assets/images/trash.svg");
+  background-image: url("../../assets/trash.svg");
 }
 
 .news-card__save-button {
@@ -114,7 +114,7 @@
   background-color: white;
   border-radius: 8px;
   border: none;
-  background-image: url("/assets/images/Normal-like-button.svg");
+  background-image: url("../../assets/Normal-like-button.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px 20px;
@@ -161,18 +161,18 @@
 
 /* When not saved but hovered */
 .news-card__save-button:hover {
-  background-image: url("/assets/images/unlike-button.svg");
+  background-image: url("../../assets/unlike-button.svg");
   transform: scale(1.05);
 }
 
 /* When saved */
 .news-card__save-button.news-card__save-button--saved {
-  background-image: url("/assets/images/Like-Button.svg");
+  background-image: url("../../assets/Like-Button.svg");
 }
 
 /* When saved and hovered */
 .news-card__save-button.news-card__save-button--saved:hover {
-  background-image: url("/assets/images/unlike-button.svg");
+  background-image: url("../../assets/unlike-button.svg");
 }
 
 .news-card__image-container {

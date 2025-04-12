@@ -30,7 +30,7 @@
 .modal__close-button,
 .success-modal__close-button,
 .news-card__button--remove {
-  cursor: url("/assets/images/Custom-Cursor.svg"), pointer !important;
+  cursor: url("../../assets/Custom-Cursor.svg"), pointer !important;
 }
 
 /* Media queries to match header responsiveness */

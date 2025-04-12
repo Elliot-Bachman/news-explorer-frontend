@@ -1,11 +1,12 @@
 import "./About.css";
+import profileImage from "../../assets/Self-Picture.jpg";
 
 function About() {
   return (
     <section className="about">
       <div className="about__image-container">
         <img
-          src="/assets/images/Self-Picture.jpg"
+          src={profileImage}
           alt="Author portrait"
           className="about__image"
         />

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
-import logoutIcon from "/assets/images/logout.svg";
+import logoutIcon from "../../assets/logout.svg";
 
 function Navigation({
   onLoginClick,

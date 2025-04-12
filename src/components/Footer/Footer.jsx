@@ -1,6 +1,6 @@
 import "./Footer.css";
-import githubLogo from "/assets/images/github.svg";
-import facebookLogo from "/assets/images/FaceBookIcon.svg";
+import githubIcon from "../../assets/github.svg";
+import facebookIcon from "../../assets/FaceBookIcon.svg";
 
 function Footer() {
   return (
@@ -29,7 +29,7 @@ function Footer() {
             rel="noopener noreferrer"
           >
             <img
-              src={githubLogo}
+              src={githubIcon}
               alt="GitHub Logo"
               className="footer__github-icon"
             />
@@ -41,7 +41,7 @@ function Footer() {
             rel="noopener noreferrer"
           >
             <img
-              src={facebookLogo}
+              src={facebookIcon}
               alt="Facebook Logo"
               className="footer__fb-icon"
             />
