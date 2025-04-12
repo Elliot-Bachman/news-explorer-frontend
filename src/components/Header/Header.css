@@ -10,6 +10,8 @@
   box-sizing: border-box;
 }
 .header__nav-container {
+  display: flex;
+  align-items: flex-end;
   height: 80px;
   width: 100%;
   box-sizing: border-box;
