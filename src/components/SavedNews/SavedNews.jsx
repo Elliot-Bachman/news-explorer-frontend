@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./SavedNews.css";
-import Preloader from "../Preloader/Preloader";
 import NewsCard from "../NewsCard/NewsCard";
 
 function SavedNews({ isLoggedIn, onLoginClick, user = { name: "Elliot" } }) {
-  const [isLoading, setIsLoading] = useState(true);
-  const [savedArticles, setSavedArticles] = useState([]);
+  const [savedArticles, setSavedArticles] = useState(() => {
+    // Initialize with data from localStorage
+    const articles = JSON.parse(localStorage.getItem("savedArticles") || "[]");
+    return articles.map((article) => {
+      if (!article.keyword) {
+        return {
+          ...article,
+          keyword: article.source?.name || "News",
+        };
+      }
+      return article;
+    });
+  });
   const [keywords, setKeywords] = useState([]);
 
   const loadSavedArticles = () => {
@@ -32,17 +42,16 @@ function SavedNews({ isLoggedIn, onLoginClick, user = { name: "Elliot" } }) {
     // Get unique keywords
     const uniqueKeywords = [...new Set(keywordList)];
     setKeywords(uniqueKeywords);
-
-    setIsLoading(false);
   };
 
   useEffect(() => {
-    // Add a small delay to simulate loading for demonstration purposes
-    const timer = setTimeout(() => {
-      loadSavedArticles();
-    }, 800);
-
-    return () => clearTimeout(timer);
+    // Load keywords on initial render
+    const articles = savedArticles;
+    const keywordList = articles.map(
+      (article) => article.keyword || article.source?.name || "News"
+    );
+    const uniqueKeywords = [...new Set(keywordList)];
+    setKeywords(uniqueKeywords);
   }, []);
 
   // Listen for changes to localStorage
@@ -104,9 +113,7 @@ function SavedNews({ isLoggedIn, onLoginClick, user = { name: "Elliot" } }) {
       <div className="saved-news">
         <div className="saved-news__container">
           <div className="saved-news__content">
-            {isLoading ? (
-              <Preloader text="Loading saved articles..." />
-            ) : savedArticles.length > 0 ? (
+            {savedArticles.length > 0 ? (
               <div className="saved-news__articles">
                 {savedArticles.map((article, index) => (
                   <NewsCard
