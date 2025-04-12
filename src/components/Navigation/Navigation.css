@@ -144,41 +144,6 @@
 
 @media screen and (max-width: 480px) {
   .navigation {
-    padding: 0 16px;
-  }
-
-  .navigation__logo {
-    margin-right: 10px;
-    font-size: 15px;
-  }
-
-  .navigation__links {
-    gap: 10px;
-    margin-right: 8px;
-  }
-
-  .navigation__link {
-    font-size: 14px;
-    padding: 8px 4px;
-  }
-
-  .navigation__button {
-    padding: 6px 12px;
-    font-size: 14px;
-  }
-
-  .navigation__buttons {
-    gap: 8px;
-  }
-
-  .navigation__logout-icon {
-    width: 14px;
-    height: 14px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .navigation {
     padding: 0 12px;
   }
 
@@ -204,6 +169,11 @@
   .navigation__button {
     padding: 5px 8px;
     font-size: 13px;
+  }
+
+  .navigation__logout-icon {
+    width: 14px;
+    height: 14px;
   }
 
   /* Fix for very small screens */

@@ -116,8 +116,8 @@
 
 @media screen and (max-width: 480px) {
   .modal__content {
-    max-width: 320px;
-    padding: 20px;
+    max-width: 290px;
+    padding: 16px;
   }
 
   .modal__close-button {
@@ -131,18 +131,5 @@
   .modal__title {
     margin-bottom: 20px;
     font-size: var(--font-size-l);
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .modal__content {
-    max-width: 290px;
-    padding: 16px;
-  }
-
-  .modal__close-button {
-    width: 24px;
-    height: 24px;
-    background-size: 24px 24px;
   }
 }

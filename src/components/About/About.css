@@ -61,7 +61,7 @@
   font-family: "Roboto", Arial, sans-serif;
 }
 
-@media screen and (max-width: 842px) {
+@media screen and (max-width: 768px) {
   .about {
     flex-direction: row; /* Maintain row direction to keep image and text side-by-side */
     align-items: center;
@@ -89,60 +89,6 @@
   .about__text-wrapper {
     padding-left: 30px;
     padding-top: 20px;
-  }
-
-  .about__info {
-    max-width: 420px; /* Allow it to use the remaining space */
-    width: 100%;
-    text-align: left; /* Align text to the left */
-    padding: 10px; /* Add padding to keep it readable */
-    font-size: 18px;
-  }
-
-  .about__title {
-    font-size: 30px; /* Scale down the title slightly for smaller screens */
-    margin-bottom: 10px; /* Adjust margin for consistency */
-    margin-top: 0;
-    font-weight: var(--font-weight-regular);
-    font-family: var(--font-family-headers);
-  }
-
-  .about__paragraph {
-    font-size: 18px; /* Adjust font size for readability */
-    line-height: 1.5; /* Maintain a comfortable line height */
-    font-weight: var(--font-weight-regular);
-    font-family: "Roboto", Arial, sans-serif;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .about {
-    flex-direction: row; /* Maintain row direction to keep image and text side-by-side */
-    align-items: center;
-    justify-content: flex-start; /* Change from center to flex-start */
-    padding: 40px 20px 120px 40px; /* Reduce left padding for smaller screens */
-    width: 100vw; /* Keep 100% viewport width */
-    margin-left: calc(-50vw + 50%); /* Keep centering */
-    margin-top: -50px; /* Maintain 50px shift upward */
-  }
-
-  .about__image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 0; /* Remove margin between the image and text */
-  }
-
-  .about__image {
-    max-width: 232px; /* Constrain the max width to avoid it becoming too large */
-    height: 232px; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the image covers its container nicely */
-    margin: 0;
-  }
-
-  .about__text-wrapper {
-    padding-left: 20px;
-    padding-top: 15px;
   }
 
   .about__info {

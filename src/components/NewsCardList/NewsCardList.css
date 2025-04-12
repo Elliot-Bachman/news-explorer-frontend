@@ -40,15 +40,9 @@
   transform: none;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 768px) {
   .news-card-list {
     grid-template-columns: repeat(2, 400px);
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .news-card-list {
-    grid-template-columns: 400px;
   }
 
   .news-card-list__show-more {
@@ -59,6 +53,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .news-card-list {
+    grid-template-columns: 400px;
+  }
+
   .news-card-list__show-more {
     width: 288px;
     height: 64px;

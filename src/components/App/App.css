@@ -18,7 +18,7 @@
   height: 80px; /* Match the header__nav-container height */
   display: flex;
   align-items: flex-end; /* Align navigation to bottom of container */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3); /* Increased to 5px with 30% opacity */
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3); /* Standardized to 3px with 30% opacity */
 }
 
 /* Custom cursor for all main buttons */
@@ -34,18 +34,18 @@
 }
 
 /* Media queries to match header responsiveness */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .navigation-container {
     padding: 20px 0 15px 0;
     height: auto;
-    border-bottom: 5px solid rgba(0, 0, 0, 0.3); /* Ensure border is consistent across breakpoints */
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3); /* Standardized border style */
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
   .navigation-container {
     padding: 16px 16px 12px 16px;
     height: auto;
-    border-bottom: 5px solid rgba(0, 0, 0, 0.3); /* Ensure border is consistent across breakpoints */
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3); /* Standardized border style */
   }
 }

@@ -74,6 +74,10 @@
 @media (max-width: 768px) {
   .footer {
     padding: 20px 40px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 20px;
   }
 
   .footer__text {
@@ -83,32 +87,12 @@
   }
 
   .footer__nav {
+    flex-direction: row;
     gap: 20px;
   }
 
   .footer__link {
     font-size: 14px;
-  }
-
-  .footer__fb-icon {
-    margin: 0;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .footer {
-    padding: 20px 16px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  .footer__nav {
-    flex-direction: row;
-    gap: 15px;
-    width: auto;
-    margin: 0;
   }
 
   .footer__social {
@@ -122,12 +106,16 @@
     padding: 0;
   }
 
+  .footer__fb-icon {
+    margin: 0;
+  }
+
   .footer__github-icon {
     margin: 0;
   }
 }
 
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 480px) {
   .footer {
     padding: 24px 16px 24px;
     display: flex;
