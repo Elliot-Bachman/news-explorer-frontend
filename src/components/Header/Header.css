@@ -112,19 +112,24 @@
 /* Add new media query for 480px */
 @media screen and (max-width: 480px) {
   .header__title {
-    padding-top: 20px;
-    font-size: 28px;
-    line-height: 32px;
-    max-height: 140px;
-    color: #fff !important;
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 400;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0;
   }
 
   .header__subtitle {
-    padding-top: 12px;
-    max-width: 288px;
-    min-height: 72px;
-    font-size: 16px;
-    line-height: 20px;
-    margin: 0 auto;
+    font-size: 18px;
+    line-height: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+  }
+
+  .header__text-container {
+    max-width: 100%;
+    padding-top: 30px;
   }
 }
