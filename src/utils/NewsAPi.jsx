@@ -21,7 +21,13 @@ export const getNewsArticles = async (searchQuery) => {
       throw new Error("Failed to fetch news articles.");
     }
     const data = await res.json();
-    return data.articles;
+
+    // Add a delay of 3 seconds before returning the articles
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(data.articles);
+      }, 6000); // 6000 milliseconds = 6 seconds
+    });
   } catch (error) {
     throw error;
   }

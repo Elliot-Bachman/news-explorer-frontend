@@ -1,3 +1,29 @@
+/* Add styling for the preloader container to position it right below the header */
+.preloader-container {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f6f7;
+  padding-top: 0; /* No padding to be right against header */
+  margin-top: -20px; /* Negative margin to move it up against header */
+  margin-bottom: 0; /* Remove negative margin to allow content to flow naturally */
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content vertically */
+  height: 232px; /* Set exact height to 232px */
+}
+
+/* Override default preloader styles when in the container */
+.preloader-container .preloader {
+  min-height: 100px; /* Reduce the minimum height */
+}
+
+.preloader-container .preloader__text {
+  margin-top: 60px; /* Reduce space below the loading spinner */
+}
+
 .main {
   margin: 0;
   background-color: #f5f6f7;
@@ -62,6 +88,15 @@
 /* When there are search results, adjust the positioning */
 .with-results + .main-page-about-wrapper .about {
   margin-top: -55px; /* Revert to original about section margin when results are shown */
+}
+
+/* When preloader is active, adjust about section positioning */
+.preloader-container + .main-page-about-wrapper {
+  margin-top: 0; /* Reset margin to allow proper flow */
+}
+
+.preloader-container + .main-page-about-wrapper .about {
+  margin-top: 0; /* Allow about section to sit right below the preloader */
 }
 
 .error {

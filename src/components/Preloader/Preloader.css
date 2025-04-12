@@ -32,6 +32,25 @@
   color: #444;
 }
 
+/* Styles for the preloader when positioned near the header */
+.preloader-container .preloader {
+  min-height: 120px; /* Override the default min-height */
+  padding-top: 0;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* We maintain the original absolute positioning but adjust the text position */
+.preloader-container .preloader__text {
+  margin-top: 135px; /* Put the text 80px below the center point of the preloader container */
+  position: relative;
+  z-index: 1;
+}
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);

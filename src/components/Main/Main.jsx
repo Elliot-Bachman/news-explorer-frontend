@@ -20,34 +20,42 @@ function Main({
 
   return (
     <>
-      <main className={mainClass}>
-        <div className="main__container">
-          <section className="main__section">
-            {articles.length > 0 && (
-              <h2 className="main__title">Search results</h2>
-            )}
-
-            {/* Render NothingFound outside main__content for better positioning */}
-            {noResults && <NothingFound />}
-
-            <div className="main__content">
-              {isLoading ? (
-                <Preloader text="Searching for news..." />
-              ) : error ? (
-                <p className="error">{error}</p>
-              ) : articles.length > 0 ? (
-                <NewsCardList
-                  articles={articles}
-                  visibleCount={visibleCount}
-                  setVisibleCount={setVisibleCount}
-                  isLoggedIn={isLoggedIn}
-                  onLoginClick={onLoginClick}
-                />
-              ) : null}
-            </div>
-          </section>
+      {/* If loading, show only preloader */}
+      {isLoading && (
+        <div className="preloader-container">
+          <Preloader text="Searching for news..." />
         </div>
-      </main>
+      )}
+
+      {/* Only show main content when not loading */}
+      {!isLoading && (
+        <main className={mainClass}>
+          <div className="main__container">
+            <section className="main__section">
+              {articles.length > 0 && (
+                <h2 className="main__title">Search results</h2>
+              )}
+
+              {/* Render NothingFound outside main__content for better positioning */}
+              {noResults && <NothingFound />}
+
+              <div className="main__content">
+                {error ? (
+                  <p className="error">{error}</p>
+                ) : articles.length > 0 ? (
+                  <NewsCardList
+                    articles={articles}
+                    visibleCount={visibleCount}
+                    setVisibleCount={setVisibleCount}
+                    isLoggedIn={isLoggedIn}
+                    onLoginClick={onLoginClick}
+                  />
+                ) : null}
+              </div>
+            </section>
+          </div>
+        </main>
+      )}
 
       {/* Wrap the About component with a div that has a specific class only for the main page */}
       <div className="main-page-about-wrapper">
