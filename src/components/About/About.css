@@ -1,8 +1,8 @@
 .about {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center content horizontally */
-  padding: 80px 0;
+  justify-content: flex-start; /* Change from center to flex-start */
+  padding: 80px 0 80px 104px; /* Add 104px left padding to position image at desired location */
   position: relative;
   background-color: white;
   margin-top: -55px; /* Move the section up by 55px */
@@ -11,8 +11,10 @@
   overflow: hidden; /* Ensure the border radius is visible */
   box-shadow: 0px -8px 20px rgba(0, 0, 0, 0.05); /* Add subtle shadow for depth */
   width: 100vw; /* Extend across the entire viewport width */
-  margin-left: calc(-50vw + 50%); /* Center the element horizontally */
-  padding-bottom: 120px; /* Add extra padding at the bottom to reach the footer */
+  margin-left: calc(
+    -50vw + 50%
+  ); /* Keep this to ensure full width but adjust positioning with padding */
+  padding-bottom: 80px; /* Add extra padding at the bottom to reach the footer */
 }
 
 .about__image-container {
@@ -40,7 +42,7 @@
   flex-wrap: wrap;
   max-width: 600px;
   width: 100%;
-  margin-bottom: 10%;
+  margin-bottom: 30%;
 }
 
 .about__title {
@@ -63,8 +65,8 @@
   .about {
     flex-direction: row; /* Maintain row direction to keep image and text side-by-side */
     align-items: center;
-    justify-content: center;
-    padding: 40px 20px 120px; /* Keep bottom padding to extend to footer */
+    justify-content: flex-start; /* Change from center to flex-start */
+    padding: 40px 20px 120px 104px; /* Add 104px left padding */
     width: 100vw; /* Keep 100% viewport width */
     margin-left: calc(-50vw + 50%); /* Keep centering */
     margin-top: -50px; /* Maintain 50px shift upward */
@@ -117,8 +119,8 @@
   .about {
     flex-direction: row; /* Maintain row direction to keep image and text side-by-side */
     align-items: center;
-    justify-content: center;
-    padding: 40px 20px 120px; /* Keep bottom padding to extend to footer */
+    justify-content: flex-start; /* Change from center to flex-start */
+    padding: 40px 20px 120px 40px; /* Reduce left padding for smaller screens */
     width: 100vw; /* Keep 100% viewport width */
     margin-left: calc(-50vw + 50%); /* Keep centering */
     margin-top: -50px; /* Maintain 50px shift upward */
@@ -171,7 +173,8 @@
   .about {
     flex-direction: column;
     align-items: center;
-    padding: 30px 20px 120px; /* Keep bottom padding to extend to footer */
+    justify-content: center; /* Return to center for mobile */
+    padding: 30px 20px 120px; /* Reset padding for mobile layout */
     width: 100vw; /* Keep 100% viewport width */
     margin-left: calc(-50vw + 50%); /* Keep centering */
     margin-top: -50px; /* Maintain 50px shift upward */

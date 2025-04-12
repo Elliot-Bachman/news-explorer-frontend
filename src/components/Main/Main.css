@@ -1,5 +1,4 @@
 .main {
-  padding: 80px 0;
   margin: 0;
   background-color: #f5f6f7;
   position: relative;
@@ -9,11 +8,10 @@
 }
 
 .main__container {
-  max-width: 1200px;
+  max-width: 1200 px;
   position: relative;
   z-index: 1;
-  margin: 0 auto; /* Center the container */
-  padding: 0 20px; /* Add horizontal padding */
+  margin: 80px auto 80px 104px; /* Center the container */
 }
 
 .main__section {
