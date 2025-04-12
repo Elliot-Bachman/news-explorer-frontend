@@ -26,13 +26,15 @@ function Main({
             {articles.length > 0 && (
               <h2 className="main__title">Search results</h2>
             )}
+
+            {/* Render NothingFound outside main__content for better positioning */}
+            {noResults && <NothingFound />}
+
             <div className="main__content">
               {isLoading ? (
                 <Preloader text="Searching for news..." />
               ) : error ? (
                 <p className="error">{error}</p>
-              ) : noResults ? (
-                <NothingFound />
               ) : articles.length > 0 ? (
                 <NewsCardList
                   articles={articles}

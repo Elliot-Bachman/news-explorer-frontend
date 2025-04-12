@@ -24,6 +24,15 @@
   margin-bottom: 64px;
 }
 
+/* Special style for when nothing found is displayed */
+.main__section .nothing-found {
+  margin-top: -20px; /* Move it higher up the page */
+  margin-bottom: 40px; /* Add space after the component */
+  max-width: 100%; /* Ensure the component takes full width */
+  margin-left: 0; /* Reset any left margin */
+  margin-right: 0; /* Reset any right margin */
+}
+
 .main__title {
   font-family: var(--font-family-headers);
   font-size: var(--font-size-xxl);
@@ -79,6 +88,10 @@
     padding: 0 40px;
   }
 
+  .main__section .nothing-found {
+    margin-top: -10px; /* Adjusted for medium screens */
+  }
+
   /* Adjust the wrapper margin for medium screens */
   .main-page-about-wrapper {
     margin-top: -60px;
@@ -96,6 +109,10 @@
 
   .main__container {
     padding: 0 16px;
+  }
+
+  .main__section .nothing-found {
+    margin-top: 0; /* Adjusted for small screens */
   }
 
   /* Adjust the wrapper margin for small screens */
