@@ -1,5 +1,6 @@
 .news-card {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 576px;
   display: flex;
   flex-direction: column;
@@ -9,6 +10,7 @@
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  margin: 0 auto;
 }
 
 .news-card:hover {
@@ -244,17 +246,21 @@
 }
 
 @media screen and (max-width: 480px) {
-  .news-card__image {
-    height: 160px;
+  .news-card {
+    height: auto;
+    min-height: 500px;
   }
 
-  .news-card__content {
-    padding: 12px;
+  .news-card__image {
+    height: 196px;
   }
 
   .news-card__title {
     font-size: 18px;
-    margin: 0 0 8px;
+  }
+
+  .news-card__description {
+    font-size: 14px;
   }
 }
 

@@ -15,6 +15,10 @@
   width: 100%;
   position: relative;
   z-index: 10;
+  height: 80px; /* Match the header__nav-container height */
+  display: flex;
+  align-items: flex-end; /* Align navigation to bottom of container */
+  box-shadow: 0 -4px #00000033 inset; /* Dramatically increased thickness to 4px and opacity to 20% */
 }
 
 /* Custom cursor for all main buttons */
@@ -27,4 +31,19 @@
 .success-modal__close-button,
 .news-card__button--remove {
   cursor: url("/assets/images/Custom-Cursor.svg"), pointer !important;
+}
+
+/* Media queries to match header responsiveness */
+@media screen and (max-width: 800px) {
+  .navigation-container {
+    padding: 20px 0 15px 0;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navigation-container {
+    padding: 16px 16px 12px 16px;
+    height: auto;
+  }
 }
