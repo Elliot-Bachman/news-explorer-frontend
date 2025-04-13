@@ -246,6 +246,18 @@
   transform: rotate(-45deg);
 }
 
+/* Mobile dropdown menu */
+.navigation__mobile-dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 56px; /* Right below the navbar */
+  left: 0;
+  width: 100%;
+  height: 174px;
+  background-color: #1a1b22;
+  z-index: 1;
+}
+
 /* Mobile styles for 320px */
 @media screen and (max-width: 320px) {
   .navigation {
@@ -279,6 +291,11 @@
     background-color: #1a1b22; /* Black background when menu is open */
   }
 
+  /* Show dropdown when menu is open */
+  .navigation--mobile-open .navigation__mobile-dropdown {
+    display: block;
+  }
+
   /* Position the close button at 21px from right */
   .navigation__mobile-menu--open {
     top: 17px;
@@ -300,6 +317,41 @@
 
   .navigation__right {
     display: none; /* Hide the regular navigation on mobile */
+  }
+
+  /* Home button in mobile dropdown */
+  .navigation__mobile-dropdown .navigation__link {
+    position: absolute;
+    left: 16px;
+    top: 100px; /* 100px down from the top of the dropdown */
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    border-bottom: 3px solid transparent;
+  }
+
+  .navigation__mobile-dropdown .navigation__link:hover,
+  .navigation__mobile-dropdown .navigation__link_active {
+    border-bottom: 3px solid white;
+  }
+
+  /* Sign in button in mobile dropdown */
+  .navigation__mobile-dropdown .navigation__button {
+    position: absolute;
+    bottom: 24px; /* 24px up from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 288px;
+    height: 56px;
+    border: 1px solid white;
+    border-radius: 100px;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0; /* Remove default margins */
   }
 
   /* Special styling for saved articles page at mobile size */
@@ -333,5 +385,55 @@
   .navigation--saved-articles .navigation__close-icon::before,
   .navigation--saved-articles .navigation__close-icon::after {
     background-color: black; /* Black close icon on white background */
+  }
+
+  /* Change dropdown background color for saved articles page */
+  .navigation--saved-articles.navigation--mobile-open
+    .navigation__mobile-dropdown {
+    background-color: white;
+  }
+
+  /* Change link color for saved articles page */
+  .navigation--saved-articles .navigation__mobile-dropdown .navigation__link {
+    color: #1a1b22;
+  }
+
+  .navigation--saved-articles
+    .navigation__mobile-dropdown
+    .navigation__link:hover,
+  .navigation--saved-articles
+    .navigation__mobile-dropdown
+    .navigation__link_active {
+    border-bottom: 3px solid #1a1b22;
+  }
+
+  /* Change button styling for saved articles page */
+  .navigation--saved-articles .navigation__mobile-dropdown .navigation__button {
+    border: 1px solid #1a1b22;
+    color: #1a1b22;
+  }
+
+  /* Revert button colors to white when menu is open */
+  .navigation--saved-articles.navigation--mobile-open
+    .navigation__mobile-dropdown
+    .navigation__button {
+    border: 1px solid white;
+    color: white;
+  }
+
+  /* Revert link colors to white when menu is open */
+  .navigation--saved-articles.navigation--mobile-open
+    .navigation__mobile-dropdown
+    .navigation__link {
+    color: white;
+  }
+
+  .navigation--saved-articles.navigation--mobile-open
+    .navigation__mobile-dropdown
+    .navigation__link:hover,
+  .navigation--saved-articles.navigation--mobile-open
+    .navigation__mobile-dropdown
+    .navigation__link_active {
+    border-bottom: 3px solid white;
   }
 }

@@ -53,6 +53,50 @@ function Navigation({
         )}
       </button>
 
+      {/* Mobile dropdown menu */}
+      <div className="navigation__mobile-dropdown">
+        <Link
+          to="/"
+          className={`navigation__link ${
+            currentPath === "/" ? "navigation__link_active" : ""
+          }`}
+        >
+          Home
+        </Link>
+
+        {isLoggedIn ? (
+          <>
+            <Link
+              to="/saved-news"
+              className={`navigation__link ${
+                isSavedArticlesPage ? "navigation__link_active" : ""
+              }`}
+              style={{ top: "150px" }} // Position Saved Articles link below Home
+            >
+              Saved articles
+            </Link>
+            <button
+              className="navigation__button navigation__button_type_logout"
+              onClick={onLogout}
+            >
+              {userName}
+              <img
+                src={logoutIcon}
+                alt="Logout"
+                className="navigation__logout-icon"
+              />
+            </button>
+          </>
+        ) : (
+          <button
+            className="navigation__button navigation__button_type_login"
+            onClick={onLoginClick}
+          >
+            Sign in
+          </button>
+        )}
+      </div>
+
       <div className="navigation__right">
         <div className="navigation__links">
           <Link
