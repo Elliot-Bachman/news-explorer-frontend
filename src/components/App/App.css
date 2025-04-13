@@ -49,3 +49,30 @@
     border-bottom: 3px solid rgba(0, 0, 0, 0.3); /* Standardized border style */
   }
 }
+
+body::after {
+  content: "Desktop — 1000px+";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  body::after {
+    content: "Tablet — ≤768px";
+    background: #007bff;
+  }
+}
+
+@media (max-width: 480px) {
+  body::after {
+    content: "Mobile — ≤480px";
+    background: #28a745;
+  }
+}

@@ -68,11 +68,18 @@
     flex-direction: row; /* Maintain row direction to keep image and text side-by-side */
     align-items: center;
     justify-content: flex-start; /* Change from center to flex-start */
-    padding: 61px 40px 61px 40px; /* Equal padding on left and right */
+    padding: 40px 40px 61px 40px; /* Equal padding on left and right */
     width: 100vw; /* Keep 100% viewport width */
     margin-left: calc(-50vw + 50%); /* Keep centering */
-    margin-top: 0; /* No negative margin at tablet resolution */
+    margin-top: 0; /* Ensures it connects directly with the news cards above */
     border-radius: 0; /* Remove border radius at tablet */
+    box-shadow: none; /* Remove shadow when it's directly below news cards */
+  }
+
+  /* When there are search results, adjust the About section's appearance */
+  .main.with-results + .main-page-about-wrapper .about {
+    box-shadow: none;
+    border-radius: 0;
   }
 
   .about__image-container {

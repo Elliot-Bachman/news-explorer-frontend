@@ -92,7 +92,7 @@
 
 /* When there are search results, adjust the positioning */
 .with-results + .main-page-about-wrapper .about {
-  margin-top: -55px; /* Revert to original about section margin when results are shown */
+  margin-top: 0; /* Remove negative margin to position it directly below the news cards */
 }
 
 /* When preloader is active, adjust about section positioning */
@@ -130,13 +130,14 @@
 
   /* Only show padding and spacing when there are search results */
   .main.with-results {
-    padding: 40px 0;
+    padding: 0px;
+    margin-bottom: 0; /* Remove bottom margin to connect with About */
   }
 
   .main__container {
     width: calc(100% - 80px); /* Account for padding */
     padding: 0 40px;
-    margin: 40px 0;
+    margin: 40px 0 0 0; /* Remove bottom margin */
     max-width: 100%;
     box-sizing: border-box;
   }
@@ -144,7 +145,7 @@
   /* Specific styles for when search results are displayed at tablet resolution */
   .main.with-results .main__container {
     margin: 0;
-    padding: 24px 40px 40px 40px;
+    padding: 24px 40px 0 40px; /* Remove bottom padding */
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -155,6 +156,11 @@
     max-width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+
+  .main__section {
+    margin-bottom: 0; /* Remove bottom margin to connect with About */
   }
 
   /* Move the title closer to the top */
@@ -181,7 +187,13 @@
 
   /* Different positioning for About when there are search results */
   .main.with-results + .main-page-about-wrapper .about {
-    margin-top: 40px;
+    margin-top: 0; /* Position directly below news cards */
+  }
+
+  /* Add specific spacing between news-card-list-container and About section */
+  .news-card-list-container + .main-page-about-wrapper .about,
+  .main.with-results .news-card-list-container ~ .about {
+    margin-top: 0;
   }
 }
 
