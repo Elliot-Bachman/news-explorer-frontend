@@ -114,7 +114,7 @@
   }
 }
 
-/* Add specific styles for 480px width mobile screens */
+/* Add specific styles for 320px width mobile screens */
 @media screen and (max-width: 480px) {
   .modal {
     align-items: flex-start; /* Position at the top to leave space for nav bar */
@@ -130,12 +130,14 @@
     padding: 16px 16px 150px; /* Specific padding as requested */
     box-sizing: border-box;
     margin-top: 56px;
-    position: relative; /* Add positioning context */
+    position: relative;
   }
 
   .modal__close-button {
-    /* Position close button 16px above the modal content */
-    top: -40px !important; /* Position exactly 16px + button height (24px) above modal */
+    /* Position close button exactly 16px above the modal content */
+    position: absolute;
+    top: -16px; /* Exactly 16px above the top edge of modal content */
+    transform: translateY(-100%); /* Move it up by its own height */
     right: 16px;
     width: 24px;
     height: 24px;
@@ -174,4 +176,27 @@
     margin-right: auto;
     margin-top: 0px;
   }
+}
+
+/* Modal input placeholder text color */
+.modal__input::placeholder {
+  color: #bcbcbf;
+  opacity: 1; /* For Firefox */
+}
+
+/* Standard color for placeholder text in other browsers */
+.modal__input::-webkit-input-placeholder {
+  color: #bcbcbf;
+}
+
+.modal__input::-moz-placeholder {
+  color: #bcbcbf;
+}
+
+.modal__input:-ms-input-placeholder {
+  color: #bcbcbf;
+}
+
+.modal__input::-ms-input-placeholder {
+  color: #bcbcbf;
 }

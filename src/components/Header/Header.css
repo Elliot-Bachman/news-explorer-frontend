@@ -64,7 +64,7 @@
   }
 
   .header__nav-container {
-    padding: 1px 0 15px 0; /* Adjusted padding for tablets */
+    padding: 14px 0 15px 0; /* Adjusted padding for tablets */
   }
 
   .header__text-container {
@@ -122,5 +122,31 @@
     padding-top: 16px;
     padding-left: 16px;
     padding-right: 16px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    min-height: 596px; /* Increased height to accommodate repositioned search form */
+  }
+
+  .header__text-container {
+    max-width: 100%;
+    padding-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .header__title {
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    padding: 30px 16px 0;
+  }
+
+  .header__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 16px;
+    text-align: center;
   }
 }

@@ -54,48 +54,59 @@ function Navigation({
       </button>
 
       {/* Mobile dropdown menu */}
-      <div className="navigation__mobile-dropdown">
-        <Link
-          to="/"
-          className={`navigation__link ${
-            currentPath === "/" ? "navigation__link_active" : ""
-          }`}
-        >
-          Home
-        </Link>
-
-        {isLoggedIn ? (
-          <>
+      {isMobileMenuOpen && (
+        <div className="navigation__dropdown">
+          <div className="navigation__dropdown-content">
+            {/* Mobile home link */}
             <Link
-              to="/saved-news"
-              className={`navigation__link ${
-                isSavedArticlesPage ? "navigation__link_active" : ""
+              to="/"
+              className={`navigation__mobile-link ${
+                currentPath === "/" ? "navigation__mobile-link_active" : ""
               }`}
-              style={{ top: "150px" }} // Position Saved Articles link below Home
             >
-              Saved articles
+              Home
             </Link>
-            <button
-              className="navigation__button navigation__button_type_logout"
-              onClick={onLogout}
-            >
-              {userName}
-              <img
-                src={logoutIcon}
-                alt="Logout"
-                className="navigation__logout-icon"
-              />
-            </button>
-          </>
-        ) : (
-          <button
-            className="navigation__button navigation__button_type_login"
-            onClick={onLoginClick}
-          >
-            Sign in
-          </button>
-        )}
-      </div>
+
+            {/* Mobile saved articles link - only for logged in users */}
+            {isLoggedIn && (
+              <Link
+                to="/saved-news"
+                className={`navigation__mobile-link ${
+                  currentPath === "/saved-news"
+                    ? "navigation__mobile-link_active"
+                    : ""
+                }`}
+              >
+                Saved articles
+              </Link>
+            )}
+
+            {/* Mobile sign-in button */}
+            {!isLoggedIn ? (
+              <button
+                className="navigation__mobile-button"
+                onClick={onLoginClick}
+              >
+                Sign in
+              </button>
+            ) : (
+              <div className="navigation__mobile-user">
+                <button
+                  className="navigation__mobile-button"
+                  onClick={onLogout}
+                >
+                  {userName}
+                  <img
+                    src={logoutIcon}
+                    alt="Logout"
+                    className="navigation__logout-icon"
+                  />
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       <div className="navigation__right">
         <div className="navigation__links">
