@@ -40,10 +40,15 @@
 }
 
 .main__container {
-  max-width: 1200 px;
+  max-width: 1200px;
   position: relative;
   z-index: 1;
-  margin: 80px auto 80px 104px; /* Center the container */
+  margin: 80px auto 80px 104px; /* Default desktop margin */
+}
+
+/* Specific container styling for search results section */
+.main.with-results .main__container {
+  margin: 80px auto 80px 104px; /* Same as default for consistency */
 }
 
 .main__section {
@@ -114,13 +119,40 @@
   box-shadow: 0 2px 10px rgba(255, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .main {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .main__container {
+    width: calc(100% - 80px); /* Account for padding */
     padding: 0 40px;
+    margin: 40px 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Specific styles for when search results are displayed at tablet resolution */
+  .main.with-results .main__container {
+    margin: 0;
+    padding: 24px 40px 40px 40px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .main__content {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Move the title closer to the top */
+  .main.with-results .main__title {
+    margin-top: 0;
+    margin-bottom: 32px;
+    width: 100%;
   }
 
   .main__section .nothing-found {
@@ -144,6 +176,13 @@
 
   .main__container {
     padding: 0 16px;
+    margin: 32px 0;
+  }
+
+  /* Mobile-specific styles for search results */
+  .main.with-results .main__container {
+    margin: 0;
+    padding: 16px 16px 32px 16px;
   }
 
   .main__section .nothing-found {

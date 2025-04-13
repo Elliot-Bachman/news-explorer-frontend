@@ -87,22 +87,37 @@
   color: #bcbcbf;
 }
 
-@media screen and (max-width: 768px) {
+/* Tablet resolution styles (900px and below) */
+@media screen and (max-width: 900px) {
   .search-form {
     margin-top: 48px;
     padding: 0 16px;
+    position: relative;
+    margin-left: 140px;
+    margin-right: 140px;
+  }
+
+  /* At 760px tablets, dimensions are exactly 448px × 56px for input and 160px × 56px for button */
+  .search-form__input {
+    width: 448px; /* Target exact width for 760px resolution */
+    height: 56px; /* Standardized height for all tablet sizes */
+    padding: 16px;
+    padding-right: 160px; /* Space for button */
+    box-sizing: border-box;
   }
 
   .search-form__button {
-    padding: 0 32px;
+    position: absolute;
+    width: 160px; /* Target exact width for 760px resolution */
+    height: 56px; /* Standardized height for all tablet sizes */
+    right: 16px;
+    top: 0;
     font-size: 16px;
-    height: 58px; /* Slightly smaller height for tablet */
-  }
-
-  .search-form__input {
-    height: 58px; /* Slightly smaller height for tablet */
-    padding: 18px;
-    padding-right: 120px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
