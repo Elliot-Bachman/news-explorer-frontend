@@ -1,3 +1,12 @@
+/* Hide mobile menu button by default */
+.navigation__mobile-menu {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -208,4 +217,99 @@
 
 .navigation--saved-articles .navigation__logout-icon {
   filter: none; /* Revert to original color instead of white */
+}
+
+/* Navigation close icon (based on modal close button) */
+.navigation__close-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.navigation__close-icon::before,
+.navigation__close-icon::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  top: 50%;
+  left: 0;
+}
+
+.navigation__close-icon::before {
+  transform: rotate(45deg);
+}
+
+.navigation__close-icon::after {
+  transform: rotate(-45deg);
+}
+
+/* Mobile styles for 320px */
+@media screen and (max-width: 320px) {
+  .navigation {
+    padding: 16px;
+    position: relative;
+    height: 56px;
+    transition: all 0.3s ease;
+  }
+
+  .navigation__logo {
+    margin: 0;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 16px;
+    z-index: 2; /* Keep logo on top */
+  }
+
+  .navigation__mobile-menu {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    z-index: 2; /* Keep button on top */
+  }
+
+  /* Style for when mobile menu is open */
+  .navigation--mobile-open {
+    background-color: #1a1b22; /* Black background when menu is open */
+  }
+
+  /* Position the close button at 21px from right */
+  .navigation__mobile-menu--open {
+    top: 17px;
+    right: 21px;
+  }
+
+  /* Change close icon color to white when menu is open */
+  .navigation--saved-articles.navigation--mobile-open
+    .navigation__close-icon::before,
+  .navigation--saved-articles.navigation--mobile-open
+    .navigation__close-icon::after {
+    background-color: white; /* Keep white on black background */
+  }
+
+  /* Change logo color to white when menu is open, even on saved articles page */
+  .navigation--saved-articles.navigation--mobile-open .navigation__logo {
+    color: white;
+  }
+
+  .navigation__right {
+    display: none; /* Hide the regular navigation on mobile */
+  }
+
+  /* Change icon color on saved articles page */
+  .navigation--saved-articles .navigation__mobile-menu img {
+    filter: brightness(0); /* Make the icon black */
+  }
+
+  /* Close icon for saved articles page */
+  .navigation--saved-articles .navigation__close-icon::before,
+  .navigation--saved-articles .navigation__close-icon::after {
+    background-color: black; /* Black close icon on white background */
+  }
 }

@@ -64,7 +64,7 @@
   }
 
   .header__nav-container {
-    padding: 20px 0 15px 0; /* Adjusted padding for tablets */
+    padding: 14px 0 15px 0; /* Adjusted padding for tablets */
   }
 
   .header__text-container {
@@ -97,7 +97,7 @@
   }
 
   .header__nav-container {
-    padding: 16px 16px 12px 16px; /* Adjusted padding for mobile */
+    margin: 0px; /* Adjusted padding for mobile */
   }
 
   .header__text-container {
