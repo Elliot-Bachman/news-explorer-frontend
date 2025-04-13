@@ -127,7 +127,11 @@ function Navigation({
 
       {/* Mobile Modal - only rendered in mobile view */}
       {isMobileView && (
-        <MobileModal isOpen={isMobileModalOpen} onClose={closeMobileModal} />
+        <MobileModal
+          isOpen={isMobileModalOpen}
+          onClose={closeMobileModal}
+          onLoginClick={onLoginClick}
+        />
       )}
     </nav>
   );

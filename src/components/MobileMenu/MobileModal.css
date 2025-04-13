@@ -28,7 +28,50 @@
   z-index: 10;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end; /* Position content at bottom for button placement */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Add subtle shadow for depth */
+  padding-bottom: 24px; /* Add bottom padding for button */
+  box-sizing: border-box;
+  position: relative; /* For absolute positioning of home link */
+}
+
+/* Home link styling */
+.mobile-modal__home-link {
+  position: absolute;
+  left: 16px;
+  bottom: 110px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none; /* No underline */
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-modal__home-link:hover {
+  opacity: 0.8;
+}
+
+/* Sign in button styling */
+.mobile-modal__signin-button {
+  width: 288px;
+  height: 56px;
+  background-color: #1a1b22; /* Same color as modal background */
+  color: white;
+  border: 1px solid white;
+  border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 auto; /* Center button horizontally */
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-modal__signin-button:hover {
+  opacity: 0.8;
 }
 
 /* Only show the modal at 480px and below */
