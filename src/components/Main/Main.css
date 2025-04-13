@@ -120,7 +120,16 @@
 }
 
 @media screen and (max-width: 900px) {
-  .main {
+  /* When there are no search results, minimize the main space */
+  .main:not(.with-results) {
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    display: none; /* Hide the main element when there are no results */
+  }
+
+  /* Only show padding and spacing when there are search results */
+  .main.with-results {
     padding: 40px 0;
   }
 
@@ -159,13 +168,20 @@
     margin-top: -10px; /* Adjusted for medium screens */
   }
 
-  /* Adjust the wrapper margin for medium screens */
+  /* Position About directly under header when no search results */
   .main-page-about-wrapper {
-    margin-top: -60px;
+    margin-top: 0;
   }
 
-  .main-page-about-wrapper .about {
-    margin-top: -134px; /* Adjusted for medium screens */
+  /* When there are no search results, position About directly under the header */
+  .main:not(.with-results) + .main-page-about-wrapper .about,
+  :not(.main) + .main-page-about-wrapper .about {
+    margin-top: 0;
+  }
+
+  /* Different positioning for About when there are search results */
+  .main.with-results + .main-page-about-wrapper .about {
+    margin-top: 40px;
   }
 }
 
