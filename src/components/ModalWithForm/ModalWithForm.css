@@ -114,22 +114,34 @@
   }
 }
 
+/* Add specific styles for 320px width mobile screens */
 @media screen and (max-width: 480px) {
-  .modal__content {
-    max-width: 290px;
-    padding: 16px;
+  .modal {
+    align-items: flex-start; /* Position at the top to leave space for nav bar */
   }
 
-  .modal__close-button {
-    right: 16px;
-    top: 16px;
-    width: 24px;
-    height: 24px;
-    background-size: 24px 24px;
+  .modal__content {
+    width: 100%; /* Full width */
+    max-width: 100%;
+    height: calc(100vh - 56px); /* Full height minus 56px for nav bar */
+    border-radius: 0; /* Remove border radius for full-width look */
+    border-top-left-radius: 16px; /* Add rounded corners to the top */
+    border-top-right-radius: 16px; /* Add rounded corners to the top */
+    padding: 16px 16px 150px; /* Specific padding as requested */
+    box-sizing: border-box;
+    margin-top: 56px;
   }
 
   .modal__title {
-    margin-bottom: 20px;
-    font-size: var(--font-size-l);
+    line-height: 28px; /* Specific line height */
+    margin-bottom: 11px; /* Specific bottom margin */
+  }
+
+  .modal__submit-button {
+    width: 288px; /* Set width to 288px */
+    height: 64px; /* Ensure height is 64px */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
   }
 }

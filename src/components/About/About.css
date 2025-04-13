@@ -80,8 +80,8 @@
   }
 
   .about__image {
-    max-width: 232px;
-    height: 232px;
+    max-width: 232px !important;
+    height: 232px !important;
     object-fit: cover;
     margin: 0;
   }

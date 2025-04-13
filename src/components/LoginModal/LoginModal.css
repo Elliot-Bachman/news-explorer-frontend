@@ -64,3 +64,23 @@
   color: #347eff;
   text-decoration: underline;
 }
+
+/* Add specific styling for mobile screens */
+@media screen and (max-width: 480px) {
+  .modal__label {
+    margin-bottom: 16px; /* Exactly 16px between inputs */
+  }
+}
+
+/* Add specific styling for 320px width */
+@media screen and (max-width: 320px) {
+  .login-modal__footer {
+    margin-top: 16px; /* Exactly 16px below the submit button */
+    text-align: center;
+  }
+
+  /* Labels should maintain their original order */
+  .modal__label {
+    margin-bottom: 16px; /* Same 16px spacing for consistency */
+  }
+}
