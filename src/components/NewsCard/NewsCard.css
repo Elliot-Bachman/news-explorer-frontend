@@ -264,6 +264,53 @@
   }
 }
 
+/* Add specific styles for 320px screens */
+@media screen and (max-width: 320px) {
+  .news-card {
+    max-width: 100%;
+    width: 100%;
+    min-height: 440px;
+    margin: 0;
+  }
+
+  .news-card__image {
+    height: 196px;
+  }
+
+  .news-card__content {
+    padding: 16px;
+    padding-bottom: 60px;
+  }
+
+  .news-card__title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    -webkit-line-clamp: 2;
+  }
+
+  .news-card__description {
+    font-size: 14px;
+    -webkit-line-clamp: 3;
+    margin-bottom: 12px;
+  }
+
+  .news-card__source {
+    bottom: 20px;
+    left: 16px;
+    font-size: 14px;
+  }
+
+  .news-card__button,
+  .news-card__save-button {
+    top: 16px;
+    right: 16px;
+  }
+
+  .news-card__elements-wrapper {
+    padding: 16px;
+  }
+}
+
 /* Card elements wrapper for saved articles */
 .news-card__elements-wrapper {
   position: absolute;

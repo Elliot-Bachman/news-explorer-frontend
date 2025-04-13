@@ -64,3 +64,27 @@
     max-width: 288px;
   }
 }
+
+/* Add specific styling for 320px width to match SavedNews */
+@media screen and (max-width: 320px) {
+  .news-card-list-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .news-card-list {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    gap: 16px;
+    margin: 0 auto 64px;
+    padding: 0 16px;
+    width: calc(100% - 32px); /* Account for padding */
+  }
+
+  .news-card-list__show-more {
+    width: 288px;
+    height: 64px;
+    font-size: 14px;
+    margin: 0 auto 32px;
+  }
+}

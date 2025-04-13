@@ -159,3 +159,37 @@
     margin-top: -114px; /* Adjusted for small screens */
   }
 }
+
+/* Add specific styles for 320px screens */
+@media screen and (max-width: 320px) {
+  /* Make the main element take minimal space when no search results are displayed */
+  .main:not(.with-results) {
+    min-height: 0;
+    padding: 0;
+  }
+
+  .main__container {
+    margin: 40px 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .main__section {
+    margin-bottom: 40px;
+  }
+
+  .main__title {
+    font-size: 30px;
+    margin-bottom: 32px;
+    padding: 0 16px;
+  }
+
+  /* Adjust the wrapper to position About section right under the header */
+  .main-page-about-wrapper {
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* No need to adjust About margin here as it's already set in About.css */
+}
