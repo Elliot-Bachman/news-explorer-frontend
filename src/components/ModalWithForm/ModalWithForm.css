@@ -114,7 +114,7 @@
   }
 }
 
-/* Add specific styles for 320px width mobile screens */
+/* Add specific styles for 480px width mobile screens */
 @media screen and (max-width: 480px) {
   .modal {
     align-items: flex-start; /* Position at the top to leave space for nav bar */
@@ -130,6 +130,36 @@
     padding: 16px 16px 150px; /* Specific padding as requested */
     box-sizing: border-box;
     margin-top: 56px;
+    position: relative; /* Add positioning context */
+  }
+
+  .modal__close-button {
+    /* Position close button 16px above the modal content */
+    top: -40px !important; /* Position exactly 16px + button height (24px) above modal */
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background-image: none; /* Remove the SVG background */
+  }
+
+  /* Create X with CSS similar to navigation close icon */
+  .modal__close-button::before,
+  .modal__close-button::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: white; /* White color for better visibility against dark overlay */
+    top: 50%;
+    left: 0;
+  }
+
+  .modal__close-button::before {
+    transform: rotate(45deg);
+  }
+
+  .modal__close-button::after {
+    transform: rotate(-45deg);
   }
 
   .modal__title {

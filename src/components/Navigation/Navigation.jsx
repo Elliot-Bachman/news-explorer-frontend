@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navigation.css";
 import logoutIcon from "../../assets/logout.svg";
 import mobileMenuIcon from "../../assets/images/mobile-icon-white.svg";
+import mobileMenuIconBlack from "../../assets/images/mobile-icon-black.svg";
 
 function Navigation({
   onLoginClick,
@@ -45,7 +46,10 @@ function Navigation({
         {isMobileMenuOpen ? (
           <span className="navigation__close-icon"></span>
         ) : (
-          <img src={mobileMenuIcon} alt="Menu" />
+          <img
+            src={isSavedArticlesPage ? mobileMenuIconBlack : mobileMenuIcon}
+            alt="Menu"
+          />
         )}
       </button>
 

@@ -302,9 +302,31 @@
     display: none; /* Hide the regular navigation on mobile */
   }
 
-  /* Change icon color on saved articles page */
+  /* Special styling for saved articles page at mobile size */
+  .navigation--saved-articles {
+    background-color: white;
+  }
+
+  .navigation--saved-articles .navigation__logo {
+    color: #1a1b22;
+    margin: 0;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 16px;
+  }
+
+  .navigation--saved-articles .navigation__mobile-menu {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+  }
+
+  /* No need for the filter now that we're using a black SVG directly */
   .navigation--saved-articles .navigation__mobile-menu img {
-    filter: brightness(0); /* Make the icon black */
+    /* Using the black icon directly instead of filter */
   }
 
   /* Close icon for saved articles page */
