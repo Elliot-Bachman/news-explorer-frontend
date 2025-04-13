@@ -139,7 +139,7 @@
   .header__title {
     font-size: 36px;
     line-height: 40px;
-    text-align: center;
+    text-align: left;
     padding: 30px 16px 0;
   }
 
@@ -147,6 +147,6 @@
     font-size: 18px;
     line-height: 24px;
     padding: 16px;
-    text-align: center;
+    text-align: left;
   }
 }

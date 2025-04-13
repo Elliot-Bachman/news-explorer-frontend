@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
 import logoutIcon from "../../assets/logout.svg";
 import mobileMenuIcon from "../../assets/images/mobile-icon-white.svg";
 import mobileMenuIconBlack from "../../assets/images/mobile-icon-black.svg";
+import MobileModal from "../MobileMenu/MobileModal";
 
 function Navigation({
   onLoginClick,
@@ -13,12 +14,37 @@ function Navigation({
   isLoggedIn,
   userName = "Test",
 }) {
-  // Add state to track if mobile menu is open
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // State to track if mobile modal is open
+  const [isMobileModalOpen, setIsMobileModalOpen] = useState(false);
+  // State to track if we're in mobile view
+  const [isMobileView, setIsMobileView] = useState(false);
 
-  // Function to toggle mobile menu
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  // Update isMobileView based on window width
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobileView(window.innerWidth <= 480);
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Set up event listener for window resize
+    window.addEventListener("resize", checkScreenSize);
+
+    // Clean up
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  // Function to toggle mobile modal
+  const toggleMobileModal = () => {
+    if (isMobileView) {
+      setIsMobileModalOpen(!isMobileModalOpen);
+    }
+  };
+
+  // Function to close mobile modal
+  const closeMobileModal = () => {
+    setIsMobileModalOpen(false);
   };
 
   // Determine if we're on the saved articles page
@@ -28,7 +54,7 @@ function Navigation({
     <nav
       className={`navigation ${
         isSavedArticlesPage ? "navigation--saved-articles" : ""
-      } ${isMobileMenuOpen ? "navigation--mobile-open" : ""}`}
+      } ${isMobileModalOpen && isMobileView ? "navigation--mobile-open" : ""}`}
     >
       <div className="navigation__left">
         <Link to="/" className="navigation__logo">
@@ -39,11 +65,11 @@ function Navigation({
       {/* Mobile menu button - toggles between hamburger and close icons */}
       <button
         className={`navigation__mobile-menu ${
-          isMobileMenuOpen ? "navigation__mobile-menu--open" : ""
+          isMobileModalOpen ? "navigation__mobile-menu--open" : ""
         }`}
-        onClick={toggleMobileMenu}
+        onClick={toggleMobileModal}
       >
-        {isMobileMenuOpen ? (
+        {isMobileModalOpen ? (
           <span className="navigation__close-icon"></span>
         ) : (
           <img
@@ -53,61 +79,7 @@ function Navigation({
         )}
       </button>
 
-      {/* Mobile dropdown menu */}
-      {isMobileMenuOpen && (
-        <div className="navigation__dropdown">
-          <div className="navigation__dropdown-content">
-            {/* Mobile home link */}
-            <Link
-              to="/"
-              className={`navigation__mobile-link ${
-                currentPath === "/" ? "navigation__mobile-link_active" : ""
-              }`}
-            >
-              Home
-            </Link>
-
-            {/* Mobile saved articles link - only for logged in users */}
-            {isLoggedIn && (
-              <Link
-                to="/saved-news"
-                className={`navigation__mobile-link ${
-                  currentPath === "/saved-news"
-                    ? "navigation__mobile-link_active"
-                    : ""
-                }`}
-              >
-                Saved articles
-              </Link>
-            )}
-
-            {/* Mobile sign-in button */}
-            {!isLoggedIn ? (
-              <button
-                className="navigation__mobile-button"
-                onClick={onLoginClick}
-              >
-                Sign in
-              </button>
-            ) : (
-              <div className="navigation__mobile-user">
-                <button
-                  className="navigation__mobile-button"
-                  onClick={onLogout}
-                >
-                  {userName}
-                  <img
-                    src={logoutIcon}
-                    alt="Logout"
-                    className="navigation__logout-icon"
-                  />
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
+      {/* Regular desktop navigation */}
       <div className="navigation__right">
         <div className="navigation__links">
           <Link
@@ -118,42 +90,45 @@ function Navigation({
           >
             Home
           </Link>
-
           {isLoggedIn && (
             <Link
               to="/saved-news"
               className={`navigation__link navigation__link--saved ${
-                isSavedArticlesPage ? "navigation__link_active" : ""
+                currentPath === "/saved-news" ? "navigation__link_active" : ""
               }`}
             >
               Saved articles
             </Link>
           )}
         </div>
-
         <div className="navigation__buttons">
-          {isLoggedIn ? (
-            <button
-              className="navigation__button navigation__button_type_logout"
-              onClick={onLogout}
-            >
-              {userName}
-              <img
-                src={logoutIcon}
-                alt="Logout"
-                className="navigation__logout-icon"
-              />
-            </button>
-          ) : (
+          {!isLoggedIn ? (
             <button
               className="navigation__button navigation__button_type_login"
               onClick={onLoginClick}
             >
               Sign in
             </button>
+          ) : (
+            <button
+              className="navigation__button navigation__button_type_logout"
+              onClick={onLogout}
+            >
+              <span className="navigation__username">{userName}</span>
+              <img
+                src={logoutIcon}
+                alt="Logout"
+                className="navigation__logout-icon"
+              />
+            </button>
           )}
         </div>
       </div>
+
+      {/* Mobile Modal - only rendered in mobile view */}
+      {isMobileView && (
+        <MobileModal isOpen={isMobileModalOpen} onClose={closeMobileModal} />
+      )}
     </nav>
   );
 }

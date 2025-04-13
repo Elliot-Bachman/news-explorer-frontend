@@ -127,6 +127,7 @@
     flex-direction: column; /* Stack input and button vertically */
     align-items: center;
     padding: 0 16px;
+    margin: 80px;
   }
 
   .search-form__input {
