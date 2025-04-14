@@ -9,7 +9,7 @@
   position: relative;
   max-width: 608px;
   margin: 88px auto 80px;
-  padding: 0 16px;
+  padding: 0 16px 80px;
 }
 
 .search-form__input {

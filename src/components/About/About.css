@@ -1,7 +1,6 @@
 .about {
   padding: 80px 104px 80px 104px;
-  margin: 0;
-  width: 100%; /* Use 100% instead of 100vw to account for scrollbar */
+  margin: 0; /* Use 100% instead of 100vw to account for scrollbar */
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
