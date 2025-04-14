@@ -11,16 +11,17 @@ function NewsCardList({
 }) {
   return (
     <div className="news-card-list-container">
-      <div className="news-card-list">
+      <ul className="news-card-list">
         {articles.slice(0, visibleCount).map((article, index) => (
-          <NewsCard
-            key={article.url || index}
-            article={article}
-            isLoggedIn={isLoggedIn}
-            onLoginClick={onLoginClick}
-          />
+          <li key={article.url || index}>
+            <NewsCard
+              article={article}
+              isLoggedIn={isLoggedIn}
+              onLoginClick={onLoginClick}
+            />
+          </li>
         ))}
-      </div>
+      </ul>
 
       {visibleCount < articles.length && (
         <button

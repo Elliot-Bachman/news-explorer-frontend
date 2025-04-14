@@ -114,17 +114,18 @@ function SavedNews({ isLoggedIn, onLoginClick, user = { name: "Elliot" } }) {
         <div className="saved-news__container">
           <div className="saved-news__content">
             {savedArticles.length > 0 ? (
-              <div className="saved-news__articles">
+              <ul className="saved-news__articles">
                 {savedArticles.map((article, index) => (
-                  <NewsCard
-                    key={`${article.title}-${index}`}
-                    article={article}
-                    isLoggedIn={isLoggedIn}
-                    isSaved={true}
-                    onLoginClick={onLoginClick}
-                  />
+                  <li key={`${article.title}-${index}`}>
+                    <NewsCard
+                      article={article}
+                      isLoggedIn={isLoggedIn}
+                      isSaved={true}
+                      onLoginClick={onLoginClick}
+                    />
+                  </li>
                 ))}
-              </div>
+              </ul>
             ) : (
               <div className="saved-news__empty">
                 <p className="saved-news__empty-message">

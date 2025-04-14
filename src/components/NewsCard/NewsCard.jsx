@@ -167,7 +167,7 @@ function NewsCard({ article, isLoggedIn, isSaved = false, onLoginClick }) {
   const displayKeyword = keyword || source?.name || "News";
 
   return (
-    <div className={`news-card ${!isLoggedIn ? "not-logged-in" : ""}`}>
+    <article className={`news-card ${!isLoggedIn ? "not-logged-in" : ""}`}>
       {urlToImage && (
         <div className="news-card__image-container">
           <img
@@ -204,7 +204,7 @@ function NewsCard({ article, isLoggedIn, isSaved = false, onLoginClick }) {
         <p className="news-card__description">{description}</p>
         <p className="news-card__source">{source?.name}</p>
       </div>
-    </div>
+    </article>
   );
 }
 
