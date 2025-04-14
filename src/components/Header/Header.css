@@ -24,12 +24,13 @@
 .header__text-container {
   margin: 0 auto;
   max-width: 608px;
-  width: 460px; /* Set fixed width */
+  width: 608px; /* Set fixed width to match title and subtitle */
   display: flex;
   flex-direction: column;
   margin-bottom: 48px;
   padding-top: 80px;
   box-sizing: border-box;
+  align-items: center; /* Center the content */
 }
 
 .header__title {
@@ -38,17 +39,25 @@
   font-weight: var(--font-weight-regular);
   line-height: 64px;
   color: #fff !important;
-  margin: 0;
+  margin: 0 auto; /* Center the title */
+  width: 608px; /* Set fixed width */
+  max-width: 608px; /* Ensure it doesn't exceed this width */
+  box-sizing: border-box;
+  text-align: left; /* Left-align the text for block style */
 }
 
 .header__subtitle {
-  margin: 0;
+  margin: 32px auto 0; /* Center the subtitle with top margin */
   color: #fff;
   font-family: var(--font-family-main);
   font-weight: var(--font-weight-regular);
   font-size: 18px;
   line-height: 24px;
-  padding-top: 32px;
+  padding-top: 0; /* Remove padding */
+  width: 608px; /* Set fixed width */
+  max-width: 608px; /* Ensure it doesn't exceed this width */
+  box-sizing: border-box;
+  text-align: center; /* Center the text */
 }
 
 .header__logo {
@@ -71,10 +80,10 @@
   .header__text-container {
     width: 460px; /* Maintain fixed width */
     max-width: 460px; /* Ensure it doesn't exceed this width */
-    padding-left: 40px; /* Consistent left padding */
     padding-top: 38px;
     box-sizing: border-box;
     margin: 0 auto; /* Center the container */
+    align-items: flex-start; /* Align to the left for tablet */
   }
 
   .header__title {
@@ -84,6 +93,7 @@
     margin: 0;
     color: #fff !important;
     max-width: 385px;
+    width: 385px; /* Set fixed width for tablet */
     text-align: left;
   }
 
@@ -93,6 +103,7 @@
     font-size: 18px;
     line-height: 24px;
     max-width: 452px;
+    width: 452px; /* Set fixed width for tablet */
     text-align: left;
   }
 }
@@ -124,6 +135,8 @@
     padding-right: 0;
     margin: 0;
     color: #fff !important;
+    width: 100%; /* Full width on mobile */
+    max-width: 100%;
   }
 
   .header__subtitle {
@@ -132,6 +145,8 @@
     padding-top: 16px;
     padding-left: 0;
     padding-right: 0;
+    width: 100%; /* Full width on mobile */
+    max-width: 100%;
   }
 }
 
@@ -155,6 +170,8 @@
     line-height: 40px;
     text-align: left;
     padding: 30px 0 0 0;
+    width: 100%;
+    max-width: 100%;
   }
 
   .header__subtitle {
@@ -162,5 +179,7 @@
     line-height: 24px;
     padding: 16px 0 0 0;
     text-align: left;
+    width: 100%;
+    max-width: 100%;
   }
 }

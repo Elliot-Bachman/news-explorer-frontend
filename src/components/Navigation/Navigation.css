@@ -59,6 +59,8 @@
 
 .navigation__link--saved {
   margin-right: 0;
+  padding-top: 30px;
+  padding-left: 30px;
 }
 
 .navigation__link:hover {
@@ -87,7 +89,6 @@
   height: 48px;
   width: 176px;
   margin-left: 42px;
-  margin-bottom: 12px;
 }
 
 .navigation__button_type_login {
@@ -129,6 +130,7 @@
 /* Styles for saved articles page */
 .navigation--saved-articles .navigation__link {
   color: #1a1b22;
+  padding-top: 20px;
 }
 
 .navigation--saved-articles .navigation__link:hover {
