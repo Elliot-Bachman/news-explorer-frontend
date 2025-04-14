@@ -2,7 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./MobileModal.css";
 
-function MobileModal({ isOpen, onClose, onLoginClick }) {
+function MobileModal({
+  isOpen,
+  onClose,
+  onLoginClick,
+  isLoggedIn,
+  onLogout,
+  userName,
+}) {
   if (!isOpen) return null;
 
   // Handle clicking on the overlay to close the modal
@@ -23,6 +30,17 @@ function MobileModal({ isOpen, onClose, onLoginClick }) {
     onClose(); // Close the mobile modal
   };
 
+  // Handle saved articles link click
+  const handleSavedArticlesClick = () => {
+    onClose(); // Close the mobile modal
+  };
+
+  // Handle logout click
+  const handleLogoutClick = () => {
+    onClose(); // Close the mobile modal
+    onLogout(); // Perform logout
+  };
+
   return (
     <div
       className="mobile-modal mobile-modal_opened"
@@ -37,12 +55,31 @@ function MobileModal({ isOpen, onClose, onLoginClick }) {
         >
           Home
         </Link>
-        <button
-          className="mobile-modal__signin-button"
-          onClick={handleSignInClick}
-        >
-          Sign in
-        </button>
+
+        {isLoggedIn ? (
+          <>
+            <Link
+              to="/saved-news"
+              className="mobile-modal__saved-link"
+              onClick={handleSavedArticlesClick}
+            >
+              Saved articles
+            </Link>
+            <button
+              className="mobile-modal__logout-button"
+              onClick={handleLogoutClick}
+            >
+              <span className="mobile-modal__username">{userName}</span>
+            </button>
+          </>
+        ) : (
+          <button
+            className="mobile-modal__signin-button"
+            onClick={handleSignInClick}
+          >
+            Sign in
+          </button>
+        )}
       </div>
     </div>
   );

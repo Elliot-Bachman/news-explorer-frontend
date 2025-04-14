@@ -131,6 +131,9 @@ function Navigation({
           isOpen={isMobileModalOpen}
           onClose={closeMobileModal}
           onLoginClick={onLoginClick}
+          isLoggedIn={isLoggedIn}
+          onLogout={onLogout}
+          userName={userName}
         />
       )}
     </nav>
