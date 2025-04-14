@@ -30,7 +30,6 @@
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden; /* Prevent potential overflow issues */
   min-height: 0; /* Allow shrinking when no results */
 }
 

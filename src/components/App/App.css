@@ -1,7 +1,13 @@
 .App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden; /* Keep this to prevent horizontal overflow */
+  width: 100%;
+  box-sizing: border-box;
   padding: 0;
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 /* Ensure header title doesn't inherit styles */
