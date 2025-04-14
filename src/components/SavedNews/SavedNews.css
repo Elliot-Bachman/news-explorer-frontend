@@ -5,7 +5,7 @@
 
 .saved-news__container {
   max-width: 1200px;
-  padding: 0 0 0 104px;
+  padding: 0 104px 0 104px;
 }
 
 .saved-news__title {
@@ -38,6 +38,12 @@
   gap: 16px;
   width: 100%;
   justify-content: start;
+  list-style: none;
+  padding: 0;
+}
+
+.saved-news__articles li {
+  list-style: none;
 }
 
 .saved-news__empty {

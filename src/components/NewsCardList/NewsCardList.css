@@ -11,6 +11,12 @@
   gap: 16px;
   margin: 0 0 64px 0;
   width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.news-card-list li {
+  list-style: none;
 }
 
 .news-card-list__show-more {
