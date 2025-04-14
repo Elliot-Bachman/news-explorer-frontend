@@ -24,6 +24,8 @@
   justify-content: center;
   align-items: center;
   margin-right: 40px; /* Add some spacing between image and text */
+  position: relative; /* Add position relative for better control */
+  flex-shrink: 0; /* Prevent image container from shrinking */
 }
 
 .about__image {
@@ -63,6 +65,22 @@
   font-family: "Roboto", Arial, sans-serif;
 }
 
+/* Add a new breakpoint for 1000px to handle the transition */
+@media screen and (max-width: 1000px) {
+  .about {
+    padding: 60px 80px 80px 80px;
+  }
+
+  .about__image {
+    width: 400px;
+    height: 400px;
+  }
+
+  .about__image-container {
+    margin-right: 30px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .about {
     flex-direction: row; /* Maintain row direction to keep image and text side-by-side */
@@ -87,6 +105,7 @@
     justify-content: center;
     align-items: center;
     margin-right: 40px; /* Add margin between the image and text */
+    flex-shrink: 0; /* Prevent image container from shrinking */
   }
 
   .about__image {
@@ -127,6 +146,66 @@
   }
 }
 
+/* Add a new breakpoint for 730px to handle the transition */
+@media screen and (max-width: 730px) {
+  .about {
+    padding: 40px 30px 61px 30px;
+  }
+
+  .about__image {
+    max-width: 210px;
+    height: 210px;
+  }
+
+  .about__image-container {
+    margin-right: 30px;
+  }
+
+  .about__info {
+    max-width: 380px;
+  }
+}
+
+/* Add a new breakpoint for 600px */
+@media screen and (max-width: 600px) {
+  .about {
+    padding: 40px 25px 61px 25px;
+  }
+
+  .about__image {
+    max-width: 200px;
+    height: 200px;
+  }
+
+  .about__image-container {
+    margin-right: 25px;
+  }
+
+  .about__info {
+    max-width: 320px;
+  }
+}
+
+/* Add a new breakpoint for 540px */
+@media screen and (max-width: 540px) {
+  .about {
+    padding: 40px 20px 61px 20px;
+  }
+
+  .about__image {
+    max-width: 190px;
+    height: 190px;
+  }
+
+  .about__image-container {
+    margin-right: 20px;
+  }
+
+  .about__info {
+    max-width: 280px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .about {
     flex-direction: column;
@@ -141,11 +220,15 @@
   .about__image-container {
     margin-right: 0;
     margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .about__image {
     max-width: 180px;
     height: 180px;
+    margin: 0 auto;
   }
 
   .about__text-wrapper {
@@ -198,6 +281,7 @@
   .about__image {
     max-width: 180px;
     height: 180px;
+    margin-left: 20px;
   }
 
   .about__text-wrapper {

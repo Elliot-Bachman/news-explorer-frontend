@@ -249,7 +249,7 @@
 }
 
 /* Mobile styles for 320px */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .navigation {
     padding: 16px;
     position: relative;
@@ -297,7 +297,6 @@
   }
 
   .navigation--saved-articles .navigation__mobile-menu {
-    position: absolute;
     top: 16px;
     right: 16px;
     width: 24px;

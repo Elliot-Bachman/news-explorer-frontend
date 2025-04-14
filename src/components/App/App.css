@@ -36,7 +36,6 @@
 /* Media queries to match header responsiveness */
 @media screen and (max-width: 768px) {
   .navigation-container {
-    padding: 20px 0 15px 0;
     height: auto;
     border-bottom: 3px solid rgba(0, 0, 0, 0.3); /* Standardized border style */
   }
@@ -44,7 +43,6 @@
 
 @media screen and (max-width: 480px) {
   .navigation-container {
-    padding: 16px 16px 12px 16px;
     height: auto;
     border-bottom: 3px solid rgba(0, 0, 0, 0.3); /* Standardized border style */
   }
