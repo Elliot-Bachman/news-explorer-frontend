@@ -192,7 +192,7 @@
     display: flex;
     justify-content: flex-start; /* Align the image to the left */
     align-items: flex-start;
-    padding-left: 8px; /* Add 8px padding to shift the image to the right */
+    margin-left: 8px; /* Add 8px padding to shift the image to the right */
   }
 
   .about__image {

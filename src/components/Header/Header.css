@@ -12,7 +12,6 @@
 .header__nav-container {
   display: flex;
   align-items: flex-end;
-  height: 80px;
   width: 100%;
   box-sizing: border-box;
   box-shadow: 0 -1px #fff3 inset;
@@ -68,9 +67,8 @@
   }
 
   .header__text-container {
-    max-width: 100%;
+    padding-left: 163px;
     padding-top: 38px;
-    padding-left: 160px;
     box-sizing: border-box;
   }
 
@@ -111,6 +109,7 @@
   .header__text-container {
     max-width: 100%;
     padding-top: 30px;
+    padding-left: 0px;
   }
 
   .header__title {
@@ -133,7 +132,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .header {
     min-height: 596px; /* Increased height to accommodate repositioned search form */
   }

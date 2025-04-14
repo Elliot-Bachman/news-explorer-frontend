@@ -62,11 +62,11 @@ function NewsCard({ article, isLoggedIn, isSaved = false, onLoginClick }) {
     // In a real app, this would call an API to save the article
     console.log("Saving article:", title);
 
-    // Add keyword based on source name if not present
-    const articleToSave = { ...article };
-    if (!articleToSave.keyword) {
-      articleToSave.keyword = source?.name || "News";
-    }
+    // Use the article's keyword (which is the search query) or fallback to source name
+    const articleToSave = {
+      ...article,
+      keyword: article.keyword || source?.name || "News",
+    };
 
     // For demo purposes, we can save to localStorage
     const savedArticles = JSON.parse(

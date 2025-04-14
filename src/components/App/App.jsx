@@ -83,7 +83,12 @@ function App() {
       if (results.length === 0) {
         setNoResults(true);
       } else {
-        setArticles(results);
+        // Add the search query as a keyword to each article
+        const articlesWithKeyword = results.map((article) => ({
+          ...article,
+          keyword: searchQuery,
+        }));
+        setArticles(articlesWithKeyword);
         setVisibleCount(3); // reset visible articles
       }
     } catch (err) {

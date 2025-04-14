@@ -67,6 +67,7 @@
 
 .navigation__link_active {
   border-bottom: 3px solid #fff;
+  margin-top: 26px;
 }
 
 .navigation__buttons {
@@ -95,6 +96,7 @@
   color: #fff;
   min-width: 100px;
   line-height: 24px;
+  margin-top: 19px;
 }
 
 .navigation__button_type_register {
@@ -223,12 +225,13 @@
 
   .navigation__link {
     font-size: 16px;
+    padding-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .navigation__logo {
-    margin-left: 16px;
+    margin: 16px 0 16px 16px;
   }
 
   .navigation__right {
