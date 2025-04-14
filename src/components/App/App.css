@@ -24,7 +24,7 @@
   height: 80px; /* Match the header__nav-container height */
   display: flex;
   align-items: flex-end; /* Align navigation to bottom of container */
-  border-bottom: 3px solid rgba(0, 0, 0, 0.3); /* Standardized to 3px with 30% opacity */
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.1); /* Slightly thicker but still subtle gray border line */
 }
 
 /* Custom cursor for all main buttons */
@@ -43,14 +43,14 @@
 @media screen and (max-width: 768px) {
   .navigation-container {
     height: auto;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.3); /* Standardized border style */
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.1); /* Slightly thicker but still subtle gray border line */
   }
 }
 
 @media screen and (max-width: 480px) {
   .navigation-container {
     height: auto;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.3); /* Standardized border style */
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.1); /* Slightly thicker but still subtle gray border line */
   }
 }
 
