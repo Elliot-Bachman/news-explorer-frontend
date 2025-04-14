@@ -41,7 +41,7 @@
   top: 0;
   height: 62px; /* Explicit height to match input */
   padding: 0 56px;
-  background-color: #2f71e5;
+  background-color: #2f71ef; /* Default color */
   border: none;
   border-radius: 100px;
   font-family: "Roboto", sans-serif;
@@ -50,7 +50,7 @@
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 0 15px rgba(47, 113, 229, 0.2);
+  box-shadow: 0 0 15px rgba(14, 26, 57, 0.2); /* 20% opacity box-shadow */
   z-index: 1;
   display: flex;
   align-items: center;
@@ -58,10 +58,11 @@
 }
 
 .search-form__button:hover {
-  background-color: #347eff;
+  background-color: #347eff; /* Hover color */
 }
 
 .search-form__button:active {
+  background-color: #2a65cc; /* Active/click color */
 }
 
 /* Default placeholder color for all resolutions */
