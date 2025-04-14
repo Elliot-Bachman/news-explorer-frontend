@@ -63,6 +63,7 @@
   font-weight: 400;
   display: block;
   text-align: left;
+  margin-top: 12px;
 }
 
 @media screen and (max-width: 768px) {
@@ -87,6 +88,7 @@
 
   .success-modal__sign-in {
     font-size: 16px;
+    margin-top: 20px;
   }
 }
 
@@ -102,5 +104,10 @@
     width: 24px;
     height: 24px;
     background-size: 24px 24px;
+  }
+
+  .success-modal__sign-in {
+    font-size: 16px;
+    margin-top: 16px;
   }
 }

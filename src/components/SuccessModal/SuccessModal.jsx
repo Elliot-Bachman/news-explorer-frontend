@@ -1,25 +1,31 @@
 import React from "react";
-import "./SuccessModal.css";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function SuccessModal({ isOpen, onClose, onSignInClick }) {
-  if (!isOpen) return null;
-
   return (
-    <div className="success-modal">
-      <div className="success-modal__container">
-        <button
-          type="button"
-          className="success-modal__close-button"
-          onClick={onClose}
-        ></button>
-        <h2 className="success-modal__title">
-          Registration successfully {"\n"}completed!
-        </h2>
-        <button className="success-modal__sign-in" onClick={onSignInClick}>
-          Sign in
-        </button>
-      </div>
-    </div>
+    <ModalWithForm
+      title="Registration successfully completed!"
+      name="success"
+      buttonText=""
+      isOpen={isOpen}
+      onClose={onClose}
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSignInClick();
+      }}
+      hideDefaultButton={true}
+    >
+      <button
+        type="submit"
+        className="success-modal__sign-in"
+        onClick={(e) => {
+          e.preventDefault();
+          onSignInClick();
+        }}
+      >
+        Sign in
+      </button>
+    </ModalWithForm>
   );
 }
 
