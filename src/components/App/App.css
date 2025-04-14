@@ -47,6 +47,15 @@
   }
 }
 
+/* Add specific breakpoint for 600px to maintain consistent margins */
+@media screen and (max-width: 600px) {
+  .navigation-container {
+    height: auto;
+    padding: 0 24px; /* Consistent padding between 600px and 480px */
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.1); /* Slightly thicker but still subtle gray border line */
+  }
+}
+
 @media screen and (max-width: 480px) {
   .navigation-container {
     height: auto;

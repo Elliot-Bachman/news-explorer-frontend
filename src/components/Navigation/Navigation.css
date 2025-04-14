@@ -243,6 +243,26 @@
   }
 }
 
+/* Add specific breakpoint for 600px to maintain consistent margins */
+@media screen and (max-width: 600px) {
+  .navigation__logo {
+    margin-left: 24px; /* Consistent margin between 600px and 480px */
+  }
+
+  .navigation__right {
+    margin-right: 24px; /* Consistent margin between 600px and 480px */
+  }
+
+  .navigation__button {
+    margin-left: 20px;
+  }
+
+  .navigation--saved-articles .navigation__link_active {
+    width: 100px;
+    padding-left: 10px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .navigation__logo {
     margin: 16px 0 16px 16px;
