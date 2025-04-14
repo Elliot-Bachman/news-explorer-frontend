@@ -24,10 +24,12 @@
 .header__text-container {
   margin: 0 auto;
   max-width: 608px;
+  width: 460px; /* Set fixed width */
   display: flex;
   flex-direction: column;
   margin-bottom: 48px;
   padding-top: 80px;
+  box-sizing: border-box;
 }
 
 .header__title {
@@ -67,9 +69,12 @@
   }
 
   .header__text-container {
-    padding-left: 163px;
+    width: 460px; /* Maintain fixed width */
+    max-width: 460px; /* Ensure it doesn't exceed this width */
+    padding-left: 40px; /* Consistent left padding */
     padding-top: 38px;
     box-sizing: border-box;
+    margin: 0 auto; /* Center the container */
   }
 
   .header__title {
@@ -90,11 +95,6 @@
     max-width: 452px;
     text-align: left;
   }
-
-  /* Incorporated styles from 600px media query */
-  .header__text-container {
-    max-width: 100%;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -107,9 +107,12 @@
   }
 
   .header__text-container {
+    width: 100%; /* Full width on mobile */
     max-width: 100%;
     padding-top: 30px;
-    padding-left: 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
   }
 
   .header__title {
@@ -117,8 +120,8 @@
     line-height: 40px;
     font-weight: 400;
     padding-top: 30px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 0;
+    padding-right: 0;
     margin: 0;
     color: #fff !important;
   }
@@ -127,8 +130,8 @@
     font-size: 18px;
     line-height: 24px;
     padding-top: 16px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -138,22 +141,26 @@
   }
 
   .header__text-container {
+    width: 100%;
     max-width: 100%;
     padding-top: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
     margin-bottom: 0;
+    box-sizing: border-box;
   }
 
   .header__title {
     font-size: 36px;
     line-height: 40px;
     text-align: left;
-    padding: 30px 16px 0;
+    padding: 30px 0 0 0;
   }
 
   .header__subtitle {
     font-size: 18px;
     line-height: 24px;
-    padding: 16px;
+    padding: 16px 0 0 0;
     text-align: left;
   }
 }
