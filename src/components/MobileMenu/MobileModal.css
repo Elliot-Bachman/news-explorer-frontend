@@ -65,24 +65,6 @@
   opacity: 0.8;
 }
 
-/* Saved articles link styling */
-.mobile-modal__saved-link {
-  position: absolute;
-  right: 16px; /* Position at right side instead of left */
-  bottom: 110px; /* Same height as Home link */
-  color: white;
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  text-decoration: none; /* No underline */
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.mobile-modal__saved-link:hover {
-  opacity: 0.8;
-}
-
 /* Logout button styling */
 .mobile-modal__logout-button {
   width: 288px;
