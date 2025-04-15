@@ -13,7 +13,9 @@
   align-items: center;
   background-color: transparent;
   box-shadow: none;
+  max-width: 1440px;
   width: 100%;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -97,7 +99,6 @@
   color: #fff;
   min-width: 100px;
   line-height: 24px;
-  margin-top: 19px;
 }
 
 .navigation__button_type_register {

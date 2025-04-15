@@ -4,8 +4,10 @@
   align-items: center;
   padding: 30px 75px 28px;
   background-color: white;
-  margin-right: 41px;
-  margin-left: 41px;
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer__text {
