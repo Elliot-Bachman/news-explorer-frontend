@@ -57,10 +57,7 @@ function Main({
         </main>
       )}
 
-      {/* Wrap the About component with a div that has a specific class only for the main page */}
-      <div className="main-page-about-wrapper">
-        <About />
-      </div>
+      <About />
     </>
   );
 }

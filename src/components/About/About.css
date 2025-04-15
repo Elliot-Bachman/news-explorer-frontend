@@ -1,84 +1,53 @@
 .about {
-  padding: 80px 104px 80px 104px;
-  margin: 0; /* Use 100% instead of 100vw to account for scrollbar */
-  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 80px 104px;
+  margin: 0 auto;
+  max-width: 1440px;
+  box-sizing: border-box;
   background-color: #fff;
-  position: relative;
-  margin-top: -55px; /* Move the section up by 55px */
-  z-index: 2; /* Ensure it sits on top of the main background */
-  border-radius: 16px 16px 0 0; /* Add rounded corners on top */
-  overflow: hidden; /* Ensure the border radius is visible */
-  box-shadow: 0px -8px 20px rgba(0, 0, 0, 0.05); /* Add subtle shadow for depth */
-  margin-left: calc(
-    -50vw + 50%
-  ); /* Keep this to ensure full width but adjust positioning with padding */
-  padding-bottom: 80px; /* Add extra padding at the bottom to reach the footer */
+  border-radius: 16px;
 }
 
 .about__image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   position: relative;
   flex-shrink: 0;
+  margin-right: 56px;
 }
 
 .about__image {
   width: 464px;
   height: 464px;
   object-fit: cover;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 50%;
+  border-radius: 1000px;
 }
 
 .about__info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
   max-width: 600px;
-  margin: 0 0 0 56px;
-  padding: 0;
-  box-sizing: border-box;
-  width: 100%;
-  margin-bottom: 30%;
-  overflow: hidden; /* Prevent text from overflowing */
 }
 
 .about__title {
-  font-family: var(--font-family-headers);
+  font-family: "Roboto Slab", serif;
   font-size: 40px;
-  font-weight: var(--font-weight-regular);
+  font-weight: 400;
   line-height: 46px;
   color: #1a1b22;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  max-width: 100%; /* Ensure title doesn't overflow */
+  margin: 0 0 24px 0;
+  max-width: 100%;
 }
 
 .about__paragraph {
-  font-family: var(--font-family-main);
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
-  font-weight: var(--font-weight-regular);
+  font-weight: 400;
   line-height: 24px;
   color: #1a1b22;
-  margin: 24px 0 0 0;
-  padding: 0;
-  box-sizing: border-box;
-  max-width: 100%; /* Ensure paragraph doesn't overflow */
+  margin: 0;
+  max-width: 100%;
 }
 
 /* Add a new breakpoint for 1000px to handle the transition */

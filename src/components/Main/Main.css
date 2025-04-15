@@ -51,211 +51,126 @@
 }
 
 .main__section {
-  margin-bottom: 64px;
-}
-
-/* Special style for when nothing found is displayed */
-.main__section .nothing-found {
-  margin-top: -20px; /* Move it higher up the page */
-  margin-bottom: 20px;
-  max-width: 100%; /* Ensure the component takes full width */
-  margin-left: 0; /* Reset any left margin */
-  margin-right: 0; /* Reset any right margin */
+  width: 100%;
+  position: relative;
 }
 
 .main__title {
-  font-family: var(--font-family-headers);
-  font-size: var(--font-size-xxl);
-  font-weight: var(--font-weight-bold);
+  font-family: "Roboto Slab", serif;
+  font-size: 40px;
+  line-height: 46px;
   color: #1a1b22;
-  margin-bottom: 64px;
+  margin: 0 0 64px 0;
 }
 
 .main__content {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 64px;
 }
 
-/* New class to position the About component right against the Header on the main page */
-.main-page-about-wrapper {
-  margin-top: -80px; /* Reduce main's bottom margin */
-  position: relative;
-  z-index: 1;
+/* About section styling */
+.about {
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
-/* Make sure the About section within this wrapper touches the header */
-.main-page-about-wrapper .about {
-  margin-top: -174px; /* Completely eliminate the gap between header and about section */
-}
-
-/* When there are search results, adjust the positioning */
-.with-results + .main-page-about-wrapper .about {
-  margin-top: 0; /* Remove negative margin to position it directly below the news cards */
-}
-
-/* When preloader is active, adjust about section positioning */
-.preloader-container + .main-page-about-wrapper {
-  margin-top: 0; /* Reset margin to allow proper flow */
-}
-
-.preloader-container + .main-page-about-wrapper .about {
-  margin-top: 0; /* Allow about section to sit right below the preloader */
-}
-
+/* Error message styling */
 .error {
-  font-family: var(--font-family-main);
-  font-size: var(--font-size-m);
   color: #ff0000;
   text-align: center;
-  background-color: rgba(255, 0, 0, 0.05);
-  padding: 20px;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.5;
-  box-shadow: 0 2px 10px rgba(255, 0, 0, 0.1);
+  margin: 20px 0;
+  font-size: 18px;
 }
 
+/* Media Queries */
 @media screen and (max-width: 900px) {
-  /* When there are no search results, minimize the main space */
   .main:not(.with-results) {
     min-height: 0;
-    padding: 0;
-    margin: 0;
-    display: none; /* Hide the main element when there are no results */
   }
 
-  /* Only show padding and spacing when there are search results */
   .main.with-results {
-    padding: 0px;
-    margin-bottom: 0; /* Remove bottom margin to connect with About */
+    min-height: 282px;
   }
 
   .main__container {
-    width: calc(100% - 80px); /* Account for padding */
-    padding: 0 40px;
-    margin: 40px 0 0 0; /* Remove bottom margin */
-    max-width: 100%;
-    box-sizing: border-box;
+    margin: 40px auto 40px 40px;
   }
 
-  /* Specific styles for when search results are displayed at tablet resolution */
   .main.with-results .main__container {
-    margin: 0;
-    padding: 24px 40px 0 40px; /* Remove bottom padding */
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+    margin: 40px auto 40px 40px;
   }
 
   .main__content {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0; /* Remove bottom margin */
+    gap: 24px;
+    margin-bottom: 32px;
   }
 
   .main__section {
-    margin-bottom: 0; /* Remove bottom margin to connect with About */
+    margin-bottom: 32px;
   }
 
-  /* Move the title closer to the top */
   .main.with-results .main__title {
-    margin-top: 0;
+    font-size: 30px;
+    line-height: 34px;
     margin-bottom: 32px;
-    width: 100%;
   }
 
   .main__section .nothing-found {
-    margin-top: -10px; /* Adjusted for medium screens */
+    margin: 32px 0;
   }
 
-  /* Position About directly under header when no search results */
-  .main-page-about-wrapper {
-    margin-top: 0;
-  }
-
-  /* When there are no search results, position About directly under the header */
-  .main:not(.with-results) + .main-page-about-wrapper .about,
-  :not(.main) + .main-page-about-wrapper .about {
-    margin-top: 0;
-  }
-
-  /* Different positioning for About when there are search results */
-  .main.with-results + .main-page-about-wrapper .about {
-    margin-top: 0; /* Position directly below news cards */
-  }
-
-  /* Add specific spacing between news-card-list-container and About section */
-  .news-card-list-container + .main-page-about-wrapper .about,
-  .main.with-results .news-card-list-container ~ .about {
-    margin-top: 0;
+  .about {
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .main {
-    padding: 0 0 40px 0;
+    min-height: 0;
   }
 
   .main__container {
-    padding: 0 16px 0 16px;
-    margin: 32px 0;
+    margin: 32px 16px;
   }
 
-  /* Mobile-specific styles for search results */
   .main.with-results .main__container {
-    margin: 0;
-    padding: 16px 16px 32px 16px;
+    margin: 32px 16px;
   }
 
   .main__section .nothing-found {
-    margin-top: 0; /* Adjusted for small screens */
+    margin: 24px 0;
   }
 
-  /* Adjust the wrapper margin for small screens */
-  .main-page-about-wrapper {
-    margin-top: -40px;
-  }
-
-  .main-page-about-wrapper .about {
-    margin-top: -114px; /* Adjusted for small screens */
+  .about {
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 }
 
-/* Add specific styles for 320px screens */
 @media screen and (max-width: 320px) {
-  /* Make the main element take minimal space when no search results are displayed */
   .main:not(.with-results) {
     min-height: 0;
-    padding: 0;
   }
 
   .main__container {
-    margin: 40px 0;
-    padding: 0;
-    width: 100%;
+    margin: 24px 16px;
   }
 
   .main__section {
-    margin-bottom: 40px;
+    margin-bottom: 24px;
   }
 
   .main__title {
-    font-size: 30px;
-    margin-bottom: 32px;
-    padding: 0 16px;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 24px;
   }
 
-  /* Adjust the wrapper to position About section right under the header */
-  .main-page-about-wrapper {
-    margin-top: 0;
-    position: relative;
-    z-index: 2;
+  .about {
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
-
-  /* No need to adjust About margin here as it's already set in About.css */
 }
