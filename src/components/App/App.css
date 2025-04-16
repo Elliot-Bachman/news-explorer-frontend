@@ -23,7 +23,8 @@
   height: 80px; /* Match the header__nav-container height */
   display: flex;
   align-items: flex-end; /* Align navigation to bottom of container */
-  border-bottom: 1.5px solid rgba(0, 0, 0, 0.1); /* Slightly thicker but still subtle gray border line */
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.1);
+  /* Slightly thicker but still subtle gray border line */
 }
 
 /* Custom cursor for all main buttons */

@@ -30,6 +30,11 @@ function MobileModal({
     onClose(); // Close the mobile modal
   };
 
+  // Handle saved articles link click
+  const handleSavedArticlesClick = () => {
+    onClose(); // Close the mobile modal
+  };
+
   // Handle logout click
   const handleLogoutClick = () => {
     onClose(); // Close the mobile modal
@@ -50,6 +55,16 @@ function MobileModal({
         >
           Home
         </Link>
+
+        {isLoggedIn && (
+          <Link
+            to="/saved-news"
+            className="mobile-modal__saved-link"
+            onClick={handleSavedArticlesClick}
+          >
+            Saved articles
+          </Link>
+        )}
 
         {isLoggedIn ? (
           <button

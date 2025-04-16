@@ -17,6 +17,7 @@
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
+  padding: 0 104px;
 }
 
 .navigation__left {
@@ -27,7 +28,6 @@
 .navigation__right {
   display: flex;
   align-items: center;
-  margin-right: 104px;
 }
 
 .navigation__logo {
@@ -38,7 +38,6 @@
   text-decoration: none;
   flex: 0 0 auto;
   margin-right: 40px;
-  margin-left: 104px;
 }
 
 .navigation__links {
@@ -227,6 +226,7 @@
 
   .navigation__right {
     margin-right: 40px;
+    padding-right: 40px;
   }
 
   .navigation__button {
@@ -247,7 +247,8 @@
 /* Add specific breakpoint for 600px to maintain consistent margins */
 @media screen and (max-width: 600px) {
   .navigation__logo {
-    margin-left: 24px; /* Consistent margin between 600px and 480px */
+    margin-left: 24px;
+    font-size: 16px; /* Consistent margin between 600px and 480px */
   }
 
   .navigation__right {
@@ -265,6 +266,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .navigation {
+    padding: 0px;
+  }
+
   .navigation__logo {
     margin: 16px 0 16px 16px;
   }

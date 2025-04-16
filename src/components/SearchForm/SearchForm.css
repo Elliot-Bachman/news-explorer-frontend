@@ -8,7 +8,7 @@
   display: flex;
   position: relative;
   max-width: 608px;
-  margin: 88px auto 80px;
+  margin: 88px auto 0;
   padding: 0 16px 80px;
 }
 

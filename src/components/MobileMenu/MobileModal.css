@@ -51,7 +51,7 @@
 .mobile-modal__home-link {
   position: absolute;
   left: 16px;
-  bottom: 110px;
+  bottom: 130px; /* Moved up by 20px from 110px */
   color: white;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -62,6 +62,24 @@
 }
 
 .mobile-modal__home-link:hover {
+  opacity: 0.8;
+}
+
+/* Saved articles link styling */
+.mobile-modal__saved-link {
+  position: absolute;
+  left: 16px;
+  bottom: 90px; /* Moved up by 20px from 70px */
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none; /* No underline */
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-modal__saved-link:hover {
   opacity: 0.8;
 }
 

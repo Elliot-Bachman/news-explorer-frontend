@@ -109,19 +109,20 @@
 }
 
 /* Add specific breakpoint for 600px to maintain consistent margins */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .header__nav-container {
     padding: 0 24px; /* Consistent padding between 600px and 480px */
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 650px) {
   .header {
     min-height: 350px;
   }
 
   .header__nav-container {
     margin: 0px; /* Adjusted padding for mobile */
+    padding: 0px;
   }
 
   .header__text-container {
