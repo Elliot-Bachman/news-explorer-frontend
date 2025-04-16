@@ -28,7 +28,7 @@ function Main({
       )}
 
       {/* Only show main content when not loading */}
-      {!isLoading && (
+      {!isLoading && (articles.length > 0 || error || noResults) && (
         <main className={mainClass}>
           <div className="main__container">
             <section className="main__section">
