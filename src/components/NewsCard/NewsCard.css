@@ -30,6 +30,8 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  height: auto;
+  min-height: 200px;
 }
 
 .news-card__date {
@@ -49,9 +51,10 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  max-height: 90px;
 }
 
-.news-card__text {
+.news-card__description {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -60,6 +63,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  max-height: 88px;
 }
 
 .news-card__source {
@@ -234,9 +238,24 @@
 
   .news-card__content {
     padding: 16px;
-    height: 270px; /* Set content height to 270px */
+    height: auto;
+    min-height: 180px;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .news-card__title {
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 12px;
+    max-height: 78px;
+  }
+
+  .news-card__description {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 12px;
+    max-height: 80px;
   }
 
   /* Reposition buttons at tablet resolution */
@@ -278,18 +297,6 @@
     margin: 0 0 8px;
   }
 
-  .news-card__title {
-    font-size: 22px; /* Set title font size to 22px */
-    line-height: 24px; /* Set title line height to 24px */
-    margin: 0 0 10px;
-  }
-
-  .news-card__text {
-    font-size: 16px;
-    margin-bottom: 40px; /* Add more space for the source */
-    -webkit-line-clamp: 3;
-  }
-
   .news-card__source {
     font-size: 16px; /* Set source font size to 16px */
     line-height: 20px; /* Set source line height to 20px */
@@ -300,11 +307,7 @@
 
 @media screen and (max-width: 768px) {
   .news-card {
-    /* Maintain the height established at 900px breakpoint */
-    height: 420px;
-    max-width: 100%;
-    width: 100%; /* Fill available space */
-    margin: 0; /* Remove auto margins */
+    height: 400px;
   }
 
   .news-card__image {
@@ -312,8 +315,22 @@
   }
 
   .news-card__content {
-    padding: 16px;
-    height: 270px; /* Maintain the content height from 900px */
+    padding: 12px;
+    min-height: 160px;
+  }
+
+  .news-card__title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    max-height: 72px;
+  }
+
+  .news-card__description {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    max-height: 72px;
   }
 
   /* Maintain button positioning from 900px breakpoint */
@@ -336,19 +353,6 @@
     background-size: 18px 18px;
   }
 
-  .news-card__title {
-    /* Keep the font-size from 900px but reduce margin */
-    font-size: 22px;
-    line-height: 24px;
-    margin: 0 0 8px;
-  }
-
-  .news-card__text {
-    font-size: 14px;
-    margin-bottom: 40px; /* Add more space for the source */
-    -webkit-line-clamp: 3;
-  }
-
   .news-card__source {
     bottom: 16px; /* Adjust position from bottom */
     left: 16px; /* Adjust position from left to match padding */
@@ -357,10 +361,7 @@
 
 @media screen and (max-width: 480px) {
   .news-card {
-    height: auto;
-    min-height: 420px;
-    max-width: 100%;
-    width: 100%;
+    height: 380px;
   }
 
   .news-card__image {
@@ -371,12 +372,16 @@
 
   .news-card__title {
     font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 8px;
+    max-height: 66px;
   }
 
-  .news-card__text {
+  .news-card__description {
     font-size: 14px;
-    margin-bottom: 40px; /* Add more space for the source */
-    -webkit-line-clamp: 3;
+    line-height: 18px;
+    margin-bottom: 8px;
+    max-height: 72px;
   }
 
   .news-card__source {
@@ -388,10 +393,7 @@
 /* Add specific styles for 320px screens */
 @media screen and (max-width: 320px) {
   .news-card {
-    max-width: 100%;
-    width: 100%;
-    min-height: 440px;
-    margin: 0;
+    height: 360px;
   }
 
   .news-card__image {
@@ -401,20 +403,22 @@
   }
 
   .news-card__content {
-    padding: 16px;
-    padding-bottom: 60px;
+    padding: 10px;
+    min-height: 140px;
   }
 
   .news-card__title {
-    font-size: 18px;
-    margin-bottom: 10px;
-    -webkit-line-clamp: 2;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 6px;
+    max-height: 60px;
   }
 
-  .news-card__text {
-    font-size: 14px;
-    -webkit-line-clamp: 3;
-    margin-bottom: 12px;
+  .news-card__description {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 6px;
+    max-height: 64px;
   }
 
   .news-card__source {

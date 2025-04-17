@@ -6,6 +6,7 @@
 .saved-news__container {
   max-width: 1200px;
   padding: 0 104px 0 104px;
+  margin: 0 auto;
 }
 
 .saved-news__title {
@@ -65,8 +66,9 @@
 }
 
 .saved-news-header__container {
-  max-width: 1200px;
+  max-width: 1400px;
   padding: 0 0 0 104px;
+  margin: 0 auto;
 }
 
 .saved-news-header__subtitle {

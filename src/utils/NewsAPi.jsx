@@ -22,11 +22,11 @@ export const getNewsArticles = async (searchQuery) => {
     }
     const data = await res.json();
 
-    // Add a delay of 3 seconds before returning the articles
+    // Add a delay of 1 second before returning the articles
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(data.articles);
-      }, 6000); // 6000 milliseconds = 6 seconds
+      }, 1000); // 1000 milliseconds = 1 second
     });
   } catch (error) {
     throw error;

@@ -39,15 +39,17 @@
 }
 
 .main__container {
-  max-width: 1200px;
-  position: relative;
-  z-index: 1;
-  margin: 80px auto 80px 104px; /* Default desktop margin */
+  width: 100%;
+  max-width: 1232px;
+  padding: 0 104px;
+  margin: 80px auto;
+  box-sizing: border-box; /* Default desktop margin */
 }
 
 /* Specific container styling for search results section */
 .main.with-results .main__container {
-  margin: 80px auto 80px 104px; /* Same as default for consistency */
+  margin: 80px auto;
+  padding: 0 104px; /* Same as default for consistency */
 }
 
 .main__section {

@@ -17,7 +17,7 @@
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 104px;
+  padding: 0 75px;
 }
 
 .navigation__left {
@@ -80,7 +80,7 @@
 }
 
 .navigation__button {
-  padding: 12px 24px;
+  padding: 12px 20px;
   border-radius: 100px;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -88,8 +88,9 @@
   cursor: pointer;
   transition: all 0.3s ease;
   height: 48px;
-  width: 176px;
-  margin-left: 42px;
+  width: auto;
+  min-width: 100px;
+  margin-left: 32px;
 }
 
 .navigation__button_type_login {
@@ -220,27 +221,79 @@
 
 /* Media queries */
 @media screen and (max-width: 900px) {
+  .navigation {
+    padding: 0 40px;
+  }
+
   .navigation__logo {
-    margin-left: 40px;
+    margin-left: 0;
+  }
+
+  .navigation.navigation--saved-articles {
+    padding: 0 40px;
   }
 
   .navigation__right {
-    margin-right: 40px;
-    padding-right: 40px;
+    margin-right: 0;
   }
 
   .navigation__button {
-    margin-left: 30px;
+    margin-left: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    height: 40px;
   }
 
   .navigation--saved-articles .navigation__link_active {
-    width: 120px;
+    width: auto;
     padding-left: 15px;
   }
 
   .navigation__link {
     font-size: 16px;
-    padding-bottom: 20px;
+    padding: 15px 8px 13px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    padding: 0 30px;
+  }
+
+  .navigation__button {
+    margin-left: 15px;
+    padding: 8px 12px;
+  }
+
+  .navigation__links {
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navigation {
+    padding: 0 20px;
+  }
+
+  .navigation__logo {
+    font-size: 18px;
+  }
+
+  .navigation__button {
+    margin-left: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    height: 36px;
+    min-width: 80px;
+  }
+
+  .navigation__links {
+    gap: 12px;
+  }
+
+  .navigation__link {
+    font-size: 14px;
+    padding: 12px 6px 10px;
   }
 }
 
@@ -269,6 +322,7 @@
 @media screen and (max-width: 480px) {
   .navigation {
     padding: 0px;
+    position: relative;
   }
 
   .navigation__logo {
@@ -286,6 +340,12 @@
 
   .navigation__right {
     display: none;
+  }
+
+  /* When mobile menu is open */
+  .navigation--mobile-open {
+    position: relative;
+    z-index: 10;
   }
 }
 
