@@ -139,8 +139,7 @@
   }
 
   .main.with-results .main__container {
-    margin: 32px auto;
-    padding: 0 16px;
+    margin: 32px 16px;
   }
 
   .main__section .nothing-found {
@@ -150,5 +149,30 @@
   .about {
     margin-top: 32px;
     margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main:not(.with-results) {
+    min-height: 0;
+  }
+
+  .main__container {
+    margin: 24px 16px;
+  }
+
+  .main__section {
+    margin-bottom: 24px;
+  }
+
+  .main__title {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 24px;
+  }
+
+  .about {
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
 }

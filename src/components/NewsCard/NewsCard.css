@@ -225,7 +225,7 @@
 @media screen and (max-width: 900px) {
   .news-card {
     height: 420px;
-    max-width: 100%;
+    max-width: none;
   }
 
   .news-card__image {
@@ -240,26 +240,48 @@
   }
 
   .news-card__title {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 20px;
+    line-height: 24px;
     margin-bottom: 8px;
-    max-height: 66px;
   }
 
   .news-card__description {
     font-size: 14px;
-    line-height: 18px;
+    line-height: 20px;
     margin-bottom: 8px;
-    max-height: 72px;
   }
 
+  /* Reposition buttons at tablet resolution */
   .news-card__button,
   .news-card__save-button {
     top: 8px;
     right: 8px;
-    width: 32px;
-    height: 32px;
-    background-size: 16px 16px;
+    width: 36px;
+    height: 36px;
+    background-size: 18px 18px;
+  }
+
+  /* Ensure the same positioning for buttons in the image container context */
+  .news-card__image-container > .news-card__button,
+  .news-card__image-container > .news-card__save-button {
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    background-size: 18px 18px;
+  }
+
+  /* Adjust tooltip positioning for tablet */
+  .not-logged-in .news-card__save-button::after,
+  .news-card__button--remove::after {
+    right: 45px;
+    top: 0;
+  }
+
+  /* Adjust tooltip positioning in wrapper context */
+  .news-card__action-container .news-card__button--remove::after {
+    right: 45px;
+    top: 0;
   }
 
   .news-card__date {
@@ -287,17 +309,37 @@
 
   .news-card__content {
     padding: 10px;
+    min-height: 150px;
   }
 
   .news-card__title {
-    font-size: 16px;
-    line-height: 20px;
-    max-height: 60px;
+    font-size: 18px;
+    line-height: 22px;
   }
 
   .news-card__description {
     font-size: 14px;
     line-height: 18px;
+  }
+
+  /* Maintain button positioning from 900px breakpoint */
+  .news-card__button,
+  .news-card__save-button {
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    background-size: 18px 18px;
+  }
+
+  /* Ensure the same positioning for buttons in the image container context */
+  .news-card__image-container > .news-card__button,
+  .news-card__image-container > .news-card__save-button {
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    background-size: 18px 18px;
   }
 
   .news-card__source {
@@ -317,10 +359,6 @@
     object-fit: cover;
   }
 
-  .news-card__content {
-    padding: 8px;
-  }
-
   .news-card__title {
     font-size: 16px;
     line-height: 20px;
@@ -328,8 +366,7 @@
 
   .news-card__description {
     font-size: 13px;
-    line-height: 16px;
-    max-height: 64px;
+    line-height: 18px;
   }
 
   .news-card__source {

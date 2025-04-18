@@ -251,7 +251,10 @@
     flex-direction: column;
     align-items: flex-start; /* Align items to the left */
     padding: 32px 16px 128px; /* Keep 16px padding on the sides */
-    width: 100%; /* Increase the negative margin to move it up directly under the header */
+    width: 100vw;
+    margin-left: calc(
+      -50vw + 50%
+    ); /* Increase the negative margin to move it up directly under the header */
     z-index: 3; /* Ensure it sits above the main element */
   }
 
@@ -269,7 +272,7 @@
   .about__image {
     max-width: 180px;
     height: 180px;
-    margin-left: 40px;
+    margin-left: 15px;
   }
 
   .about__text-wrapper {
