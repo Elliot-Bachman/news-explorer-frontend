@@ -7,6 +7,7 @@
   box-sizing: border-box;
   padding: 0;
   max-width: 100%;
+  outline: 2px solid red;
 }
 
 /* Ensure header title doesn't inherit styles */
