@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { Navigate } from "react-router-dom";
+import React, { useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
@@ -152,6 +153,9 @@ function App() {
             />
           }
         />
+
+        {/* ✅ Fallback route to fix GH Pages refresh or bad URL */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
 
