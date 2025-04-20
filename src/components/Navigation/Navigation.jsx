@@ -22,7 +22,7 @@ function Navigation({
   // Update isMobileView based on window width
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobileView(window.innerWidth <= 480);
+      setIsMobileView(window.innerWidth <= 580);
     };
 
     // Initial check
@@ -37,9 +37,7 @@ function Navigation({
 
   // Function to toggle mobile modal
   const toggleMobileModal = () => {
-    if (isMobileView) {
-      setIsMobileModalOpen(!isMobileModalOpen);
-    }
+    setIsMobileModalOpen(!isMobileModalOpen);
   };
 
   // Function to close mobile modal
@@ -125,17 +123,15 @@ function Navigation({
         </div>
       </div>
 
-      {/* Mobile Modal - only rendered in mobile view */}
-      {isMobileView && (
-        <MobileModal
-          isOpen={isMobileModalOpen}
-          onClose={closeMobileModal}
-          onLoginClick={onLoginClick}
-          isLoggedIn={isLoggedIn}
-          onLogout={onLogout}
-          userName={userName}
-        />
-      )}
+      {/* Mobile Modal */}
+      <MobileModal
+        isOpen={isMobileModalOpen}
+        onClose={closeMobileModal}
+        onLoginClick={onLoginClick}
+        isLoggedIn={isLoggedIn}
+        onLogout={onLogout}
+        userName={userName}
+      />
     </nav>
   );
 }

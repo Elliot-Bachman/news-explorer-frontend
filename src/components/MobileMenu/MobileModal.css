@@ -125,8 +125,8 @@
   opacity: 0.8;
 }
 
-/* Only show the modal at 480px and below */
-@media screen and (max-width: 480px) {
+/* Only show the modal at 580px and below */
+@media screen and (max-width: 580px) {
   .mobile-modal_opened {
     display: flex;
     flex-direction: column;

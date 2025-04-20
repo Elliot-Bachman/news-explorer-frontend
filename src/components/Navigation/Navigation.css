@@ -99,6 +99,7 @@
   color: #fff;
   min-width: 100px;
   line-height: 24px;
+  width: 176px;
 }
 
 .navigation__button_type_register {
@@ -226,12 +227,12 @@
     padding: 0 40px;
   }
 
-  .navigation__logo {
-    margin-left: 0;
+  .navigation__button_type_logi {
+    width: 152px;
   }
 
-  .navigation.navigation--saved-articles {
-    padding: 0 40px;
+  .navigation__logo {
+    margin-left: 0;
   }
 
   .navigation__right {
@@ -273,7 +274,7 @@
 
 @media screen and (max-width: 768px) {
   .navigation {
-    padding: 0 20px;
+    padding: 0 40px;
   }
 
   .navigation__logo {
@@ -306,10 +307,6 @@
     font-size: 16px; /* Consistent margin between 600px and 480px */
   }
 
-  .navigation__right {
-    padding-right: 24px; /* Consistent margin between 600px and 480px */
-  }
-
   .navigation__button {
     margin-left: 20px;
   }
@@ -320,47 +317,16 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 580px) {
   .navigation {
-    padding: 0px;
     position: relative;
+    padding: 16px;
+    height: 56px;
+    transition: all 0.3s ease;
   }
 
   .navigation.navigation--saved-articles {
-    padding: 0 0 0 0;
-  }
-
-  .navigation__logo {
-    margin: 16px 0 16px 16px;
-  }
-
-  .navigation__right {
-    margin-right: 16px;
-  }
-
-  .navigation__mobile-menu {
-    display: block;
-    margin-right: 16px;
-  }
-
-  .navigation__right {
-    display: none;
-  }
-
-  /* When mobile menu is open */
-  .navigation--mobile-open {
-    position: relative;
-    z-index: 10;
-  }
-}
-
-/* Mobile styles for 320px */
-@media screen and (max-width: 480px) {
-  .navigation {
-    padding: 16px;
-    position: relative;
-    height: 56px;
-    transition: all 0.3s ease;
+    padding: 0 16px;
   }
 
   .navigation__logo {
@@ -372,6 +338,10 @@
     z-index: 2; /* Keep logo on top */
   }
 
+  .navigation__right {
+    display: none;
+  }
+
   .navigation__mobile-menu {
     display: block;
     position: absolute;
@@ -380,6 +350,12 @@
     width: 24px;
     height: 24px;
     z-index: 2; /* Keep button on top */
+  }
+
+  /* When mobile menu is open */
+  .navigation--mobile-open {
+    position: relative;
+    z-index: 10;
   }
 
   /* Position the close button at same position as mobile icon */

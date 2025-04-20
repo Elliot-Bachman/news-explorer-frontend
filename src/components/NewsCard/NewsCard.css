@@ -51,6 +51,7 @@
 
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Truncate to 2 lines (you can use 3 if needed) */
+  line-clamp: 2; /* Standard property for compatibility */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -66,10 +67,11 @@
 
   display: -webkit-box;
   -webkit-line-clamp: 4; /* Limits to 4 lines */
+  line-clamp: 4; /* Standard property for compatibility */
   -webkit-box-orient: vertical;
   overflow: hidden; /* THIS IS GOOD — for text only */
   text-overflow: ellipsis;
-  max-height: 88px; /* Optional if line-clamp alone doesn’t work */
+  max-height: 88px; /* Optional if line-clamp alone doesn't work */
 }
 
 .news-card__source {
