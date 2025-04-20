@@ -173,7 +173,6 @@
   .saved-news-header__container {
     width: 100%;
     max-width: 100%;
-    padding: 0 16px;
     box-sizing: border-box;
     overflow-x: clip; /* Contains anything that might leak */
   }
