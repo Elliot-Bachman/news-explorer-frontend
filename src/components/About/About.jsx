@@ -18,8 +18,7 @@ function About() {
             My name is Elliot Bachman. I am an upcoming full stack software
             engineer proficient in JavaScript, React, Express, Node, HTML, CSS.
             I am currently enrolled in the Full Stack Developer program at
-            TripleTen. I look forward to learning more about software
-            development in the future!
+            TripleTen bootcamp.
           </p>
           <p className="about__paragraph">
             I look forward to learning more about software development in the

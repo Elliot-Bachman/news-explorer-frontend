@@ -51,9 +51,9 @@
 }
 
 /* Add a new breakpoint for 1000px to handle the transition */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .about {
-    padding: 60px 80px 80px 80px;
+    padding: 60px 40px;
   }
 
   .about__image {
@@ -71,10 +71,6 @@
 }
 
 @media screen and (max-width: 900px) {
-  .about {
-    padding: 40px 40px 61px 40px;
-  }
-
   .about__image {
     width: 232px;
     height: 232px;

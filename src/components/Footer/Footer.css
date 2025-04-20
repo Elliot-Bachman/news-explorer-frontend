@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 75px 28px;
+  padding: 30px 104px 28px;
   background-color: white;
   margin: 0 auto;
   max-width: 1440px;
@@ -72,7 +72,7 @@
   z-index: 2;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .footer {
     padding: 20px 40px;
     flex-direction: row;

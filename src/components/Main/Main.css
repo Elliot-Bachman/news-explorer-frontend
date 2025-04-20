@@ -139,8 +139,11 @@
     min-height: 0;
   }
 
-  .main__container {
-    margin: 32px 16px;
+  .main.with-results .main__title {
+    font-size: 30px;
+    line-height: 34px;
+    margin-bottom: 60px;
+    margin-top: 32px;
   }
 
   .main__section .nothing-found {
@@ -153,13 +156,9 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .main:not(.with-results) {
     min-height: 0;
-  }
-
-  .main__container {
-    margin: 24px 16px;
   }
 
   .main__section {
