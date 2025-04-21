@@ -160,7 +160,7 @@
 
 @media screen and (max-width: 480px) {
   .header {
-    min-height: 596px; /* Increased height to accommodate repositioned search form */
+    min-height: 536px; /* Increased height to accommodate repositioned search form */
   }
 
   .header__text-container {
