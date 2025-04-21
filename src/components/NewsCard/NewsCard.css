@@ -184,8 +184,21 @@
   width: 100%;
 }
 
+/* Elements wrapper for saved cards */
+.news-card__elements-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
 /* Keyword card styling */
 .news-card__keyword {
+  position: absolute;
+  top: 24px;
+  left: 16px;
   background-color: #fff;
   border-radius: 10px;
   font-family: "Roboto", Arial, sans-serif;
@@ -303,6 +316,11 @@
     line-height: 20px;
     bottom: 16px;
     left: 16px;
+  }
+
+  /* Adjust keyword to align with button */
+  .news-card__keyword {
+    top: 8px;
   }
 }
 

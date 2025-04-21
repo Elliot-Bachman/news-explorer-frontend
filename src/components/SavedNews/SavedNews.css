@@ -159,6 +159,12 @@
   }
 }
 
+@media screen and (max-width: 750px) {
+  .saved-news__articles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (max-width: 480px) {
   .saved-news {
     padding: 24px 0;
