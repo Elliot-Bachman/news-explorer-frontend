@@ -139,6 +139,10 @@
     min-height: 0;
   }
 
+  .main.with-results .main__container {
+    padding: 0 16px;
+  }
+
   .main.with-results .main__title {
     font-size: 30px;
     line-height: 34px;

@@ -159,13 +159,13 @@
   }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 480px) {
   .saved-news {
     padding: 24px 0;
   }
 
   .saved-news-header {
-    padding: 24px 0;
+    padding: 8px 0 32px;
     width: 100%;
   }
 
@@ -174,7 +174,7 @@
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    overflow-x: clip; /* Contains anything that might leak */
+    padding: 0 16px; /* Contains anything that might leak */
   }
 
   .saved-news-header__title {
