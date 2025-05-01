@@ -1,6 +1,6 @@
 # NewsExplorer
 
-A full-stack web application that allows users to search for and save news articles on any topic. Built with React, Express, and Node.js, this application provides a seamless experience for discovering and managing news content.
+A web application that allows users to search for and save news articles on any topic. Built with React, this application provides a seamless experience for discovering and managing news content.
 
 ## Table of Contents
 
@@ -54,11 +54,6 @@ Registered users can access their saved articles in a dedicated section. Article
   - HTML5
   - CSS3
   - JavaScript
-
-- Backend:
-  - Node.js
-  - Express
-  - MongoDB
 
 ## Getting Started
 
