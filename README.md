@@ -7,6 +7,7 @@ A web application that allows users to search for and save news articles on any 
 - [Overview](#overview)
 - [Features](#features)
 - [Live Demo](#live-demo)
+- [Video Demo](#video-demo)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Usage Guide](#usage-guide)
@@ -19,6 +20,11 @@ NewsExplorer is a responsive web application that enables users to search for ne
 
 The project is deployed and accessible at:
 https://elliot-bachman.github.io/news-explorer-frontend/
+
+## Video Demo
+
+Watch a complete walkthrough of the application's features:
+[Watch Demo Video](https://drive.google.com/file/d/1ACVDnq-YLqBnqYYbn_LkFwIEoFzPoavl/view?usp=drive_link)
 
 ## Features
 
